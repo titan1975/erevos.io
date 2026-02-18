@@ -67,7 +67,7 @@ export function useContactForm() {
       await axios.post('/api/contact', formData)
 
       submitStatus.value = 'success'
-      submitMessage.value = 'Thank you! Athena will connect you with our team soon.'
+      submitMessage.value = 'Thank you! Our team will get back to you soon.'
 
       // Reset form
       formData.name = ''

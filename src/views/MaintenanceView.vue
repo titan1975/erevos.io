@@ -8,9 +8,8 @@
           We're currently performing scheduled maintenance to improve our services. We'll be back
           shortly!
         </p>
-        <div class="athena-note mt-4">
-          <span>🦉</span>
-          <span>Athena is upgrading her wisdom...</span>
+        <div class="maintenance-note mt-4">
+          <span>We're upgrading our systems...</span>
         </div>
       </div>
     </section>
@@ -42,7 +41,7 @@
   margin: 0 auto;
 }
 
-.athena-note {
+.maintenance-note {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -2,12 +2,9 @@
   <main class="not-found-page">
     <section class="not-found-section">
       <div class="container text-center">
-        <div class="owl-icon">🦉</div>
         <h1>4<span class="tyrian-text">0</span>4</h1>
         <h2>Page Not Found</h2>
-        <p>
-          Even Athena's wisdom couldn't find this page. It may have been moved or doesn't exist.
-        </p>
+        <p>The page you're looking for may have been moved or doesn't exist.</p>
         <div class="not-found-actions mt-4">
           <router-link to="/" class="btn"> <i class="fas fa-home"></i> Back to Home </router-link>
           <router-link to="/contact" class="btn btn-outline"> Contact Us </router-link>

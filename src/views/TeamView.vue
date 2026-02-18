@@ -34,11 +34,6 @@ const team = ref([
     bio: 'Full-stack developer with a passion for fixing broken code and building elegant solutions.',
   },
   {
-    name: 'Athena',
-    role: 'AI Assistant',
-    bio: 'Our AI-powered assistant providing 24/7 wisdom and technical guidance.',
-  },
-  {
     name: 'Join Us',
     role: 'Your Role Here',
     bio: 'We are always looking for talented individuals to join our growing team.',

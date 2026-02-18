@@ -59,7 +59,7 @@ const plans = ref([
       'Process automation',
       'Priority support',
       'Up to 40 hours',
-      'Athena AI access',
+      'AI-powered code analysis',
     ],
     featured: true,
   },

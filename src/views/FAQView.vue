@@ -46,11 +46,6 @@ const faqs = ref([
       'We specialize in code fixing & refactoring, process automation, technical consulting, legacy modernization, API integration, and custom software development.',
   },
   {
-    question: 'How does Athena, your AI assistant, work?',
-    answer:
-      'Athena is powered by advanced AI and can help you with code analysis, automation suggestions, and technical problem-solving directly through our website chat.',
-  },
-  {
     question: 'What is your typical project timeline?',
     answer:
       'Project timelines vary based on scope and complexity. Small fixes can be done in days, while larger projects typically take 2-8 weeks. We provide detailed estimates during our initial consultation.',
@@ -63,7 +58,7 @@ const faqs = ref([
   {
     question: 'How do I get started?',
     answer:
-      'Simply reach out through our contact page, chat with Athena, or email us at hello@erevos.io. We will schedule a free consultation to discuss your needs.',
+      'Simply reach out through our contact page or email us at hello@erevos.io. We will schedule a free consultation to discuss your needs.',
   },
 ])
 </script>

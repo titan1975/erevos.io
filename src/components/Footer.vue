@@ -74,12 +74,6 @@
               <span>{{ contact.hours }}</span>
             </li>
           </ul>
-
-          <!-- Athena Badge -->
-          <div class="athena-badge">
-            <span class="owl">🦉</span>
-            <span class="badge-text">Wisdom of Athena 24/7</span>
-          </div>
         </div>
       </div>
 
@@ -415,71 +409,6 @@ footer::after {
   color: var(--tyrian-light);
 }
 
-/* Athena Badge */
-.athena-badge {
-  margin-top: 30px;
-  padding: 15px;
-  background: rgba(102, 2, 60, 0.1);
-  border: 1px solid var(--tyrian-purple);
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-  overflow: hidden;
-}
-
-.athena-badge::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, var(--tyrian-glow) 0%, transparent 70%);
-  animation: rotate 10s linear infinite;
-  opacity: 0.5;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.owl,
-.boot {
-  font-size: 24px;
-  position: relative;
-  z-index: 1;
-  animation: bounce 2s ease-in-out infinite;
-}
-
-.boot {
-  animation-delay: 0.5s;
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-.badge-text {
-  color: var(--tyrian-light);
-  font-weight: 600;
-  font-size: 14px;
-  position: relative;
-  z-index: 1;
-}
-
 /* Footer Bottom */
 .footer-bottom {
   padding: 25px 0;
@@ -541,7 +470,7 @@ footer::after {
 .back-to-top {
   position: fixed;
   bottom: 30px;
-  right: 100px; /* Positioned next to Athena bot */
+  right: 30px;
   width: 50px;
   height: 50px;
   background: linear-gradient(135deg, var(--tyrian-purple), var(--tyrian-dark));
@@ -614,7 +543,7 @@ footer::after {
 
   .back-to-top {
     right: 20px;
-    bottom: 90px; /* Above Athena bot on mobile */
+    bottom: 30px;
     width: 45px;
     height: 45px;
     font-size: 18px;
@@ -633,11 +562,6 @@ footer::after {
 
   .separator {
     display: none;
-  }
-
-  .athena-badge {
-    width: 100%;
-    justify-content: center;
   }
 }
 

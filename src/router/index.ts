@@ -38,9 +38,6 @@ const CookiesView = () => import('../views/CookiesView.vue')
 const CareersView = () => import('../views/CareersView.vue')
 const TeamView = () => import('../views/TeamView.vue')
 
-// Athena AI
-const AthenaChatView = () => import('../views/AthenaChatView.vue')
-
 // Static Pages
 const FAQView = () => import('../views/FAQView.vue')
 const PricingView = () => import('../views/PricingView.vue')
@@ -68,7 +65,6 @@ export type RouteNames =
   | 'cookies'
   | 'faq'
   | 'pricing'
-  | 'athena-chat'
   | 'not-found'
   | 'maintenance'
 
@@ -220,19 +216,6 @@ const routes: RouteRecordRaw[] = [
       layout: 'blog',
     },
     props: true,
-  },
-
-  // === ATHENA AI SECTION ===
-  {
-    path: '/athena',
-    name: 'athena-chat',
-    component: AthenaChatView,
-    meta: {
-      title: 'Chat with Athena',
-      description: 'Get AI-powered help from Athena',
-      requiresAuth: false,
-      layout: 'default',
-    },
   },
 
   // === COMPANY INFO ===

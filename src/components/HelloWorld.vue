@@ -18,16 +18,15 @@
             </h1>
             <p class="hero-sub animate-fade-in delay-2">
               Erevos.io rescues broken codebases, automates tedious processes, and solves the
-              technical problems your team can't crack — powered by
-              <strong>Athena</strong>, our AI goddess of wisdom.
+              technical problems your team can't crack.
             </p>
             <div class="hero-btns animate-fade-in delay-3">
               <router-link to="/contact" class="btn btn-glow">
                 Get Free Consultation <i class="fas fa-arrow-right"></i>
               </router-link>
-              <button class="btn btn-outline" @click="openAthena">
-                <span class="owl-icon">🦉</span> Ask Athena Now
-              </button>
+              <router-link to="/services" class="btn btn-outline">
+                Our Services <i class="fas fa-cogs"></i>
+              </router-link>
             </div>
             <div class="hero-trust animate-fade-in delay-4">
               <div class="trust-avatars">
@@ -65,7 +64,7 @@
                 </div>
                 <div class="code-line">
                   <span class="line-num">5</span>
-                  <span class="code-comment"># After Erevos.io 🦉</span>
+                  <span class="code-comment"># After Erevos.io ✨</span>
                 </div>
                 <div class="code-line">
                   <span class="line-num">6</span>
@@ -118,56 +117,6 @@
             <router-link :to="pillar.link" class="pillar-cta">
               Learn More <i class="fas fa-arrow-right"></i>
             </router-link>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════ ATHENA SHOWCASE ═══════════════ -->
-    <section class="athena-showcase">
-      <div class="container">
-        <div class="athena-grid">
-          <div class="athena-visual">
-            <div class="athena-orb">
-              <div class="orb-ring ring-1"></div>
-              <div class="orb-ring ring-2"></div>
-              <div class="orb-ring ring-3"></div>
-              <div class="orb-core">
-                <span class="owl-emoji">🦉</span>
-              </div>
-            </div>
-            <div class="athena-glow"></div>
-          </div>
-
-          <div class="athena-info">
-            <span class="section-tag">AI-POWERED</span>
-            <h2>Meet <span class="tyrian-text">Athena</span></h2>
-            <p class="athena-desc">
-              Named after the Greek goddess of wisdom, Athena is your 24/7 AI assistant. She
-              analyzes your code, suggests fixes, designs automation workflows, and solves technical
-              challenges — all in real time.
-            </p>
-
-            <div class="athena-capabilities">
-              <div v-for="cap in athenaCaps" :key="cap.title" class="cap-item">
-                <div class="cap-icon">
-                  <i :class="['fas', cap.icon]"></i>
-                </div>
-                <div>
-                  <h4>{{ cap.title }}</h4>
-                  <p>{{ cap.desc }}</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="athena-actions">
-              <button class="btn btn-glow" @click="openAthena">
-                <span>🦉</span> Chat with Athena
-              </button>
-              <router-link to="/athena" class="btn btn-outline">
-                Full Experience <i class="fas fa-expand"></i>
-              </router-link>
-            </div>
           </div>
         </div>
       </div>
@@ -252,7 +201,7 @@
       <div class="container">
         <div class="cta-content">
           <h2>Ready to Fix Your Code &amp; <span class="tyrian-text">Scale?</span></h2>
-          <p>Let Athena analyze your project for free. No commitment, just wisdom.</p>
+          <p>Let our experts analyze your project for free. No commitment, just results.</p>
           <div class="cta-btns">
             <router-link to="/contact" class="btn btn-lg btn-glow">
               Start Your Free Consultation <i class="fas fa-rocket"></i>
@@ -274,7 +223,7 @@ import type { Service } from '../types'
 const stats = ref([
   { value: '150+', label: 'Projects Delivered' },
   { value: '99.9%', label: 'Uptime Guaranteed' },
-  { value: '24/7', label: 'Athena AI Support' },
+  { value: '24/7', label: 'Expert Support' },
   { value: '50+', label: 'Happy Clients' },
 ])
 
@@ -308,30 +257,6 @@ const pillars = ref([
       'Scalability planning',
     ],
     link: '/services/problem-solving',
-  },
-])
-
-// ── Athena Capabilities ──
-const athenaCaps = ref([
-  {
-    icon: 'fa-bug',
-    title: 'Instant Code Analysis',
-    desc: 'Paste your code and get fixes in seconds',
-  },
-  {
-    icon: 'fa-cogs',
-    title: 'Automation Design',
-    desc: 'Describe your workflow, get an automation plan',
-  },
-  {
-    icon: 'fa-shield-alt',
-    title: 'Security Review',
-    desc: 'Identify vulnerabilities before they strike',
-  },
-  {
-    icon: 'fa-lightbulb',
-    title: 'Architecture Advice',
-    desc: 'Best practices from the goddess of wisdom',
   },
 ])
 
@@ -372,7 +297,7 @@ const testimonials = ref([
     name: 'Marcus Rivera',
     role: 'Founder, DataFlow',
     quote:
-      'Athena is incredible. It analyzed our codebase and found issues our entire team missed. The automation work cut our deployment time by 80%.',
+      'Erevos.io analyzed our codebase and found issues our entire team missed. The automation work cut our deployment time by 80%.',
   },
   {
     name: 'Elena Kowalski',
@@ -392,7 +317,7 @@ const processSteps = ref([
   {
     icon: 'fa-search',
     title: 'Deep Analysis',
-    desc: 'Athena + our engineers audit your codebase.',
+    desc: 'Our engineers audit your codebase.',
   },
   {
     icon: 'fa-hammer',
@@ -407,10 +332,6 @@ const processSteps = ref([
 ])
 
 // ── Helpers ──
-const openAthena = (): void => {
-  window.dispatchEvent(new CustomEvent('open-athena'))
-}
-
 const particleStyle = (n: number) => ({
   left: `${(n * 5) % 100}%`,
   top: `${(n * 7 + 10) % 100}%`,

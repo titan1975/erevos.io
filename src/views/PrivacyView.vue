@@ -13,7 +13,7 @@
           <h2>1. Information We Collect</h2>
           <p>
             We collect information you provide directly to us, such as when you fill out a contact
-            form, chat with Athena, or communicate with us via email.
+            form or communicate with us via email.
           </p>
 
           <h2>2. How We Use Your Information</h2>
