@@ -150,32 +150,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ SOCIAL PROOF ═══════════════ -->
-    <section class="social-proof">
-      <div class="container">
-        <div class="section-title">
-          <span class="section-tag">TESTIMONIALS</span>
-          <h2>What People <span>Say</span></h2>
-        </div>
-
-        <div class="testimonials-grid">
-          <div v-for="t in testimonials" :key="t.name" class="testimonial-card">
-            <div class="stars">
-              <i v-for="n in 5" :key="n" class="fas fa-star"></i>
-            </div>
-            <p class="quote">"{{ t.quote }}"</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">{{ t.name.charAt(0) }}</div>
-              <div>
-                <strong>{{ t.name }}</strong>
-                <span>{{ t.role }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ═══════════════ PROCESS ═══════════════ -->
     <section class="process-section">
       <div class="container">
@@ -282,28 +256,6 @@ const services = ref<Service[]>([
     title: 'Problem Solving',
     description: 'Technical consulting and custom solutions for complex challenges.',
     features: ['Technical consulting', 'Custom development', 'System architecture'],
-  },
-])
-
-// ── Testimonials ──
-const testimonials = ref([
-  {
-    name: 'Sarah Chen',
-    role: 'CTO, NovaTech',
-    quote:
-      'Erevos.io saved our product launch. They took our broken legacy API and turned it into a modern, scalable system in two weeks.',
-  },
-  {
-    name: 'Marcus Rivera',
-    role: 'Founder, DataFlow',
-    quote:
-      'Erevos.io analyzed our codebase and found issues our entire team missed. The automation work cut our deployment time by 80%.',
-  },
-  {
-    name: 'Elena Kowalski',
-    role: 'VP Engineering, Meridian',
-    quote:
-      "The team at Erevos.io doesn't just fix code — they transform how you think about your software. Absolutely worth every penny.",
   },
 ])
 
@@ -971,79 +923,6 @@ const particleStyle = (n: number) => ({
 }
 
 /* ═══════════════════════════════════════
-   SOCIAL PROOF
-   ═══════════════════════════════════════ */
-.social-proof {
-  padding: 120px 0;
-  background: var(--black-darker);
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.testimonial-card {
-  background: var(--black);
-  border: 1px solid var(--black-lighter);
-  border-radius: 16px;
-  padding: 32px;
-  transition: all 0.3s ease;
-}
-
-.testimonial-card:hover {
-  border-color: var(--tyrian-purple);
-  transform: translateY(-4px);
-}
-
-.stars {
-  margin-bottom: 16px;
-}
-
-.stars i {
-  color: var(--warning);
-  font-size: 14px;
-  margin-right: 2px;
-}
-
-.quote {
-  color: var(--text-gray);
-  font-size: 15px;
-  line-height: 1.7;
-  font-style: italic;
-  margin-bottom: 24px;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.author-avatar {
-  width: 42px;
-  height: 42px;
-  background: linear-gradient(135deg, var(--tyrian-purple), var(--tyrian-dark));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.testimonial-author strong {
-  display: block;
-  font-size: 15px;
-}
-
-.testimonial-author span {
-  font-size: 13px;
-  color: var(--text-gray);
-}
-
-/* ═══════════════════════════════════════
    PROCESS
    ═══════════════════════════════════════ */
 .process-section {
@@ -1230,8 +1109,7 @@ const particleStyle = (n: number) => ({
     order: -1;
   }
 
-  .pillars-grid,
-  .testimonials-grid {
+  .pillars-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
     margin: 0 auto;
