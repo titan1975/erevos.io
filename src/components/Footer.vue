@@ -55,7 +55,7 @@
 
         <!-- Contact Info -->
         <div class="footer-section">
-          <h4>Contact Us</h4>
+          <h4>Get In Touch</h4>
           <ul class="contact-info">
             <li>
               <i class="fas fa-map-marker-alt"></i>

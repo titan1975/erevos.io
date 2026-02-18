@@ -12,8 +12,8 @@
         <div class="card">
           <h2>{{ projectTitle }}</h2>
           <p class="project-description">
-            Detailed case study coming soon. Contact us to learn more about this project and how we
-            achieved the results.
+            Full case study coming soon. Want the details? Just reach out — we're happy to walk you
+            through it.
           </p>
           <router-link to="/projects" class="btn btn-outline mt-3">
             <i class="fas fa-arrow-left"></i> Back to Projects

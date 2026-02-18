@@ -12,11 +12,11 @@
         <div class="card">
           <h2>{{ serviceTitle }}</h2>
           <p class="service-description">
-            We provide top-tier solutions in this area. Contact us to learn more about how we can
-            help your business.
+            This is what we do best. Hit us up if you want to know more or just want to talk it
+            through.
           </p>
           <router-link to="/contact" class="btn mt-3">
-            Get Started <i class="fas fa-arrow-right"></i>
+            Let's Talk <i class="fas fa-arrow-right"></i>
           </router-link>
         </div>
       </div>

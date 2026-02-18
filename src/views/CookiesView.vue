@@ -36,9 +36,9 @@
             certain cookies may affect website functionality.
           </p>
 
-          <h2>5. Contact</h2>
+          <h2>5. Questions?</h2>
           <p>
-            For questions about our Cookie Policy, contact us at
+            Got questions about cookies? Reach out at
             <a href="mailto:privacy@erevos.io">privacy@erevos.io</a>.
           </p>
         </article>

@@ -174,8 +174,8 @@ const routes: RouteRecordRaw[] = [
     name: 'contact',
     component: ContactView,
     meta: {
-      title: 'Contact Us',
-      description: 'Get in touch with our team',
+      title: "Let's Talk",
+      description: "Got a project or a problem? Let's chat.",
       requiresAuth: false,
       layout: 'default',
     },

@@ -34,9 +34,9 @@
             unauthorized access, alteration, disclosure, or destruction.
           </p>
 
-          <h2>5. Contact Us</h2>
+          <h2>5. Get In Touch</h2>
           <p>
-            If you have questions about this Privacy Policy, please contact us at
+            Got questions about this Privacy Policy? Just drop us a line at
             <a href="mailto:privacy@erevos.io">privacy@erevos.io</a>.
           </p>
         </article>

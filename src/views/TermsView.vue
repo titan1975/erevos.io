@@ -35,9 +35,9 @@
             damages arising from the use of our services.
           </p>
 
-          <h2>5. Contact</h2>
+          <h2>5. Questions?</h2>
           <p>
-            For questions about these Terms, contact us at
+            Got questions about these Terms? Reach out at
             <a href="mailto:legal@erevos.io">legal@erevos.io</a>.
           </p>
         </article>
