@@ -2,8 +2,8 @@
   <main class="pricing-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Our <span class="tyrian-text">Pricing</span></h1>
-        <p>Simple, transparent pricing for every need</p>
+        <h1>What It <span class="tyrian-text">Costs</span></h1>
+        <p>Straight up pricing. No hidden fees, no gotchas.</p>
       </div>
     </section>
 
@@ -45,7 +45,7 @@ const plans = ref([
     name: 'Starter',
     price: '$999',
     period: '/project',
-    description: 'Perfect for small fixes and quick wins',
+    description: 'Quick fixes, code reviews — get things done fast',
     features: ['Bug fixing', 'Code review', 'Up to 10 hours', 'Email support'],
     featured: false,
   },
@@ -53,7 +53,7 @@ const plans = ref([
     name: 'Professional',
     price: '$2,999',
     period: '/month',
-    description: 'For ongoing development and automation',
+    description: 'For teams that need ongoing dev work and automation',
     features: [
       'Everything in Starter',
       'Process automation',
@@ -67,7 +67,7 @@ const plans = ref([
     name: 'Enterprise',
     price: 'Custom',
     period: '',
-    description: 'Tailored solutions for large organizations',
+    description: "Big project? Let's talk and work something out",
     features: [
       'Everything in Professional',
       'Dedicated team',

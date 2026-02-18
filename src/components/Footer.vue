@@ -7,8 +7,8 @@
         <div class="footer-section company-info">
           <router-link to="/" class="footer-logo"> erevos<span>.io</span> </router-link>
           <p class="footer-description">
-            Transforming businesses through innovative software solutions. We fix broken code,
-            automate processes, and solve technical problems with wisdom and precision.
+            We fix broken code, automate the boring stuff, and help you ship faster. No fluff, no
+            corporate speak — just honest engineering work.
           </p>
 
           <!-- Social Links -->

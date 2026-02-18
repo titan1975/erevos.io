@@ -2,8 +2,8 @@
   <main class="contact-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Contact <span class="tyrian-text">Us</span></h1>
-        <p>Get in touch with our team — we'd love to hear from you</p>
+        <h1>Let's <span class="tyrian-text">Talk</span></h1>
+        <p>Got a project? A problem? Just want to chat? We're here.</p>
       </div>
     </section>
 
@@ -11,7 +11,7 @@
       <div class="container">
         <div class="contact-grid grid-2">
           <div class="contact-form-wrapper">
-            <h2>Send us a message</h2>
+            <h2>Drop us a message</h2>
             <form @submit.prevent="submitForm" class="contact-form">
               <div class="form-group">
                 <label class="form-label">Name</label>

@@ -41,24 +41,24 @@ const toggle = (index: number) => {
 
 const faqs = ref([
   {
-    question: 'What services does Erevos.io offer?',
+    question: 'What do you actually do?',
     answer:
-      'We specialize in code fixing & refactoring, process automation, technical consulting, legacy modernization, API integration, and custom software development.',
+      "We fix broken code, automate repetitive processes, help with architecture decisions, modernize old systems, build APIs, and do custom development. Basically — if it's a software problem, we can probably help.",
   },
   {
-    question: 'What is your typical project timeline?',
+    question: 'How long does a project take?',
     answer:
-      'Project timelines vary based on scope and complexity. Small fixes can be done in days, while larger projects typically take 2-8 weeks. We provide detailed estimates during our initial consultation.',
+      "Depends on the mess. Small fixes? A few days. Bigger projects? Usually 2-8 weeks. We'll give you a straight estimate upfront — no surprises.",
   },
   {
-    question: 'Do you offer ongoing support?',
+    question: 'Do you stick around after launch?',
     answer:
-      'Yes! We offer maintenance and support packages to ensure your software continues running smoothly after delivery.',
+      "Yeah, we do. We offer support packages to keep things running smooth. We're not the type to ship and disappear.",
   },
   {
     question: 'How do I get started?',
     answer:
-      'Simply reach out through our contact page or email us at hello@erevos.io. We will schedule a free consultation to discuss your needs.',
+      "Just hit us up through the contact page or email hello@erevos.io. We'll have a real conversation about what you need — no sales pitch, no pressure.",
   },
 ])
 </script>

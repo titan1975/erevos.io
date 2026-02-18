@@ -10,22 +10,23 @@
           <div class="hero-content">
             <div class="hero-badge animate-fade-in">
               <span class="badge-dot"></span>
-              We Fix. We Automate. We Solve.
+              No fluff. No drama. Just code that works.
             </div>
             <h1 class="animate-fade-in delay-1">
-              Your Code Is <span class="tyrian-text">Broken</span>? <br />We'll Make It
-              <span class="tyrian-text">Legendary</span>.
+              Your Code Is <span class="tyrian-text">A Mess</span>? <br />Let's
+              <span class="tyrian-text">Sort It Out</span>.
             </h1>
             <p class="hero-sub animate-fade-in delay-2">
-              Erevos.io rescues broken codebases, automates tedious processes, and solves the
-              technical problems your team can't crack.
+              Look, we get it — stuff breaks, deadlines pile up, and that legacy codebase nobody
+              wants to touch keeps getting worse. We're the team you call when you need someone to
+              actually roll up their sleeves and get it done. No corporate jargon, just real work.
             </p>
             <div class="hero-btns animate-fade-in delay-3">
               <router-link to="/contact" class="btn btn-glow">
-                Get Free Consultation <i class="fas fa-arrow-right"></i>
+                Let's Talk <i class="fas fa-arrow-right"></i>
               </router-link>
               <router-link to="/services" class="btn btn-outline">
-                Our Services <i class="fas fa-cogs"></i>
+                What We Do <i class="fas fa-cogs"></i>
               </router-link>
             </div>
             <div class="hero-trust animate-fade-in delay-4">
@@ -35,7 +36,7 @@
                 <span class="avatar">D</span>
                 <span class="avatar">+</span>
               </div>
-              <span class="trust-text">Trusted by developers &amp; startups worldwide</span>
+              <span class="trust-text">Real devs &amp; startups trust us with their code</span>
             </div>
           </div>
           <div class="hero-visual animate-fade-in delay-2">
@@ -97,9 +98,9 @@
     <section class="what-we-do">
       <div class="container">
         <div class="section-title">
-          <span class="section-tag">WHAT WE DO</span>
+          <span class="section-tag">THE REAL DEAL</span>
           <h2>Three Problems. <span>One Team.</span></h2>
-          <p>We specialize in the hardest parts of software engineering</p>
+          <p>We don't do everything — we do these three things really damn well</p>
         </div>
 
         <div class="pillars-grid">
@@ -126,9 +127,9 @@
     <section class="services-preview">
       <div class="container">
         <div class="section-title">
-          <span class="section-tag">SERVICES</span>
-          <h2>Solutions That <span>Deliver</span></h2>
-          <p>From legacy rescue to cutting-edge automation</p>
+          <span class="section-tag">HOW WE HELP</span>
+          <h2>Stuff We're <span>Good At</span></h2>
+          <p>No buzzwords, just what we actually deliver</p>
         </div>
 
         <div class="services-grid">
@@ -144,7 +145,7 @@
 
         <div class="text-center mt-5">
           <router-link to="/services" class="btn btn-outline">
-            View All Services <i class="fas fa-arrow-right"></i>
+            See Everything We Do <i class="fas fa-arrow-right"></i>
           </router-link>
         </div>
       </div>
@@ -154,9 +155,9 @@
     <section class="process-section">
       <div class="container">
         <div class="section-title">
-          <span class="section-tag">HOW IT WORKS</span>
-          <h2>Simple <span>Process</span></h2>
-          <p>From broken code to production in four steps</p>
+          <span class="section-tag">NO MYSTERY</span>
+          <h2>How It <span>Works</span></h2>
+          <p>Four steps. No surprises. No hidden fees.</p>
         </div>
 
         <div class="process-steps">
@@ -174,13 +175,18 @@
     <section class="cta-banner">
       <div class="container">
         <div class="cta-content">
-          <h2>Ready to Fix Your Code &amp; <span class="tyrian-text">Scale?</span></h2>
-          <p>Let our experts analyze your project for free. No commitment, just results.</p>
+          <h2>Got a <span class="tyrian-text">Problem?</span> Let's Fix It.</h2>
+          <p>
+            Drop us a line. We'll look at your project, give you honest feedback, and go from there.
+            No pressure.
+          </p>
           <div class="cta-btns">
             <router-link to="/contact" class="btn btn-lg btn-glow">
-              Start Your Free Consultation <i class="fas fa-rocket"></i>
+              Let's Chat <i class="fas fa-rocket"></i>
             </router-link>
-            <router-link to="/pricing" class="btn btn-lg btn-outline"> See Pricing </router-link>
+            <router-link to="/pricing" class="btn btn-lg btn-outline">
+              See What It Costs
+            </router-link>
           </div>
         </div>
       </div>
@@ -195,10 +201,10 @@ import type { Service } from '../types'
 
 // ── Stats ──
 const stats = ref([
-  { value: '150+', label: 'Projects Delivered' },
-  { value: '99.9%', label: 'Uptime Guaranteed' },
-  { value: '24/7', label: 'Expert Support' },
-  { value: '50+', label: 'Happy Clients' },
+  { value: '150+', label: 'Projects Done' },
+  { value: '99.9%', label: 'Uptime. For Real.' },
+  { value: '24/7', label: "We're Around" },
+  { value: '50+', label: 'Happy Partners' },
 ])
 
 // ── Three Pillars ──
@@ -239,23 +245,23 @@ const services = ref<Service[]>([
   {
     id: 1,
     icon: 'fa-code',
-    title: 'Code Fixing & Refactoring',
-    description: 'We rescue broken legacy code, fix bugs, and modernize your software.',
-    features: ['Legacy code modernization', 'Bug fixing', 'Performance optimization'],
+    title: 'Code Fixing & Cleanup',
+    description: "Your code is broken or messy? We'll get in there and make it work properly.",
+    features: ['Legacy code rescue', 'Bug fixing', 'Performance boost'],
   },
   {
     id: 2,
     icon: 'fa-robot',
-    title: 'Process Automation',
-    description: 'Automate repetitive tasks and streamline your business workflows.',
-    features: ['Workflow automation', 'API integrations', 'Data pipeline automation'],
+    title: 'Automation',
+    description: "Stop doing things manually. We'll set up the pipelines and workflows for you.",
+    features: ['Workflow automation', 'API integrations', 'Data pipeline setup'],
   },
   {
     id: 3,
     icon: 'fa-brain',
-    title: 'Problem Solving',
-    description: 'Technical consulting and custom solutions for complex challenges.',
-    features: ['Technical consulting', 'Custom development', 'System architecture'],
+    title: 'Technical Consulting',
+    description: "Need a straight answer about your tech stack? We'll give you one.",
+    features: ['Honest tech advice', 'Custom builds', 'Architecture planning'],
   },
 ])
 
@@ -263,23 +269,23 @@ const services = ref<Service[]>([
 const processSteps = ref([
   {
     icon: 'fa-comments',
-    title: 'Discovery Call',
-    desc: 'Tell us about your challenges. We listen.',
+    title: 'We Talk',
+    desc: "You tell us what's broken. We listen — no sales pitch.",
   },
   {
     icon: 'fa-search',
-    title: 'Deep Analysis',
-    desc: 'Our engineers audit your codebase.',
+    title: 'We Dig In',
+    desc: 'We look at your code, find the real problems, and tell you straight.',
   },
   {
     icon: 'fa-hammer',
-    title: 'Build & Fix',
-    desc: 'We deliver clean, tested, production-ready code.',
+    title: 'We Build & Fix',
+    desc: 'Clean code, tested, production-ready. No shortcuts.',
   },
   {
     icon: 'fa-rocket',
-    title: 'Launch & Support',
-    desc: "Deploy with confidence. We've got your back.",
+    title: 'We Ship & Support',
+    desc: 'It goes live, it works, and we stick around if you need us.',
   },
 ])
 

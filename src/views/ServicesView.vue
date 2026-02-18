@@ -2,8 +2,8 @@
   <main class="services-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Our <span class="tyrian-text">Services</span></h1>
-        <p>Comprehensive software solutions tailored to your needs</p>
+        <h1>What We <span class="tyrian-text">Actually Do</span></h1>
+        <p>No buzzwords. Here's how we can help.</p>
       </div>
     </section>
 
@@ -33,44 +33,44 @@ const services = ref<Service[]>([
   {
     id: 1,
     icon: 'fa-code',
-    title: 'Code Fixing & Refactoring',
-    description: 'We rescue broken legacy code, fix bugs, and modernize your software.',
-    features: ['Legacy code modernization', 'Bug fixing', 'Performance optimization'],
+    title: 'Code Fixing & Cleanup',
+    description: "Your code is broken or messy? We'll get in there and make it work properly.",
+    features: ['Legacy code rescue', 'Bug fixing', 'Performance boost'],
   },
   {
     id: 2,
     icon: 'fa-robot',
-    title: 'Process Automation',
-    description: 'Automate repetitive tasks and streamline your business workflows.',
-    features: ['Workflow automation', 'API integrations', 'Data pipeline automation'],
+    title: 'Automation',
+    description: "Stop doing things manually. We'll set up the pipelines and workflows for you.",
+    features: ['Workflow automation', 'API integrations', 'Data pipeline setup'],
   },
   {
     id: 3,
     icon: 'fa-brain',
-    title: 'Problem Solving',
-    description: 'Technical consulting and custom solutions for complex challenges.',
-    features: ['Technical consulting', 'Custom development', 'System architecture'],
+    title: 'Technical Consulting',
+    description: "Need a straight answer about your tech stack? We'll give you one.",
+    features: ['Honest tech advice', 'Custom builds', 'Architecture planning'],
   },
   {
     id: 4,
     icon: 'fa-server',
-    title: 'Legacy Modernization',
-    description: 'Transform outdated systems into modern, scalable architectures.',
+    title: 'Legacy Rescue',
+    description: "Old system nobody wants to touch? We'll modernize it without burning it down.",
     features: ['Cloud migration', 'Microservices', 'Containerization'],
   },
   {
     id: 5,
     icon: 'fa-plug',
     title: 'API Integration',
-    description: 'Connect your systems with seamless API development and integration.',
-    features: ['REST & GraphQL APIs', 'Third-party integrations', 'Webhook systems'],
+    description: "Need your systems to talk to each other? We'll wire them up properly.",
+    features: ['REST & GraphQL APIs', 'Third-party hookups', 'Webhook systems'],
   },
   {
     id: 6,
     icon: 'fa-lightbulb',
-    title: 'Technical Consulting',
-    description: 'Expert guidance for your technology strategy and implementation.',
-    features: ['Architecture review', 'Tech stack selection', 'Best practices'],
+    title: 'Tech Strategy',
+    description: "Not sure what stack to use or how to scale? We'll help you figure it out.",
+    features: ['Architecture review', 'Stack selection', 'Best practices'],
   },
 ])
 </script>
