@@ -58,20 +58,8 @@
           <h4>Get In Touch</h4>
           <ul class="contact-info">
             <li>
-              <i class="fas fa-map-marker-alt"></i>
-              <span>{{ contact.address }}</span>
-            </li>
-            <li>
-              <i class="fas fa-phone-alt"></i>
-              <a :href="`tel:${contact.phone}`">{{ contact.phone }}</a>
-            </li>
-            <li>
               <i class="fas fa-envelope"></i>
               <a :href="`mailto:${contact.email}`">{{ contact.email }}</a>
-            </li>
-            <li>
-              <i class="fas fa-clock"></i>
-              <span>{{ contact.hours }}</span>
             </li>
           </ul>
         </div>
@@ -173,10 +161,10 @@ const services = ref<FooterLink[]>([
 ])
 
 const contact = ref<ContactInfo>({
-  address: '123 Innovation Drive, San Francisco, CA 94107',
-  phone: '+1 (555) 123-4567',
+  address: '',
+  phone: '',
   email: 'hello@erevos.io',
-  hours: 'Mon-Fri: 9AM - 6PM PST',
+  hours: '',
 })
 
 // Methods

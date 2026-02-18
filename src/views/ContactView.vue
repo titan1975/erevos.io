@@ -90,20 +90,8 @@
             <h2>Get in touch</h2>
             <ul class="contact-details">
               <li>
-                <i class="fas fa-map-marker-alt"></i>
-                <span>123 Innovation Drive, San Francisco, CA 94107</span>
-              </li>
-              <li>
-                <i class="fas fa-phone-alt"></i>
-                <a href="tel:+15551234567">+1 (555) 123-4567</a>
-              </li>
-              <li>
                 <i class="fas fa-envelope"></i>
                 <a href="mailto:hello@erevos.io">hello@erevos.io</a>
-              </li>
-              <li>
-                <i class="fas fa-clock"></i>
-                <span>Mon-Fri: 9AM - 6PM PST</span>
               </li>
             </ul>
           </div>
