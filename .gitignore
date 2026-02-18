@@ -9,7 +9,6 @@ lerna-debug.log*
 
 # Dependency directories
 node_modules/
-dist/
 dist-ssr/
 *.local
 
@@ -32,7 +31,6 @@ dist-ssr/
 .env.development
 
 # Build outputs
-dist
 dist-ssr
 
 # Coverage
