@@ -3,7 +3,6 @@
     <button class="athena-toggle" @click="toggleBot" :class="{ active: isOpen }">
       <div class="toggle-content">
         <span class="athena-symbol">🦉</span>
-        <span class="boot-symbol">👢</span>
       </div>
       <span v-if="!isOpen" class="tooltip">Athena awaits...</span>
     </button>

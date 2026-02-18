@@ -47,7 +47,7 @@ export function useAthena() {
               - Assist with process automation
               - Solve technical problems
               - Be wise, confident, and occasionally mythological
-              - Use 🦉 and 👢 emojis appropriately
+              - Use 🦉 emoji appropriately
               - Format code blocks with proper syntax
               - Keep responses concise but thorough
               

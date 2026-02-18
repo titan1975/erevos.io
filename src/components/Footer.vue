@@ -79,7 +79,6 @@
           <div class="athena-badge">
             <span class="owl">🦉</span>
             <span class="badge-text">Wisdom of Athena 24/7</span>
-            <span class="boot">👢</span>
           </div>
         </div>
       </div>
@@ -106,7 +105,6 @@
         aria-label="Back to top"
       >
         <i class="fas fa-arrow-up"></i>
-        <span class="boot-icon">👢</span>
       </button>
     </div>
   </footer>
@@ -572,12 +570,6 @@ footer::after {
 .back-to-top:hover {
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 8px 25px var(--tyrian-glow);
-}
-
-.back-to-top .boot-icon {
-  font-size: 16px;
-  line-height: 1;
-  animation: kick 1s ease-in-out infinite;
 }
 
 @keyframes kick {

@@ -1,11 +1,11 @@
-import{x as y,I as k,r as c,d as A,c as u,f as h,g as e,i as w,F as C,j as b,n as x,t as g,C as _,l as I,p as D,v as B,q as M,s as V}from"./vendor-CUa8enhp.js";import{_ as F}from"./index-CIn78aKn.js";function S(){const a=c([{role:"assistant",content:"🦉 Greetings! I am Athena, goddess of wisdom. How may I help you with your code, automation needs, or technical challenges today?",timestamp:new Date}]),r=c(!1),o=c(null),l=c(),n=k(()=>a.value[a.value.length-1]);return{messages:a,isThinking:r,error:o,conversationId:l,lastMessage:n,sendMessage:async s=>{if(!s.trim()||r.value)return;const d={role:"user",content:s,timestamp:new Date};a.value.push(d),r.value=!0,o.value=null;try{const i=await y.post(void 0,{model:"deepseek-chat",messages:[{role:"system",content:`You are Athena, Greek goddess of wisdom, now serving as Erevos.io's AI assistant. 
+import{x as y,I as k,r as c,d as A,c as u,f as h,g as e,i as w,F as C,j as b,n as x,t as g,C as _,l as I,p as D,v as B,q as M,s as V}from"./vendor-CUa8enhp.js";import{_ as F}from"./index-CYGmHg5Y.js";function S(){const a=c([{role:"assistant",content:"🦉 Greetings! I am Athena, goddess of wisdom. How may I help you with your code, automation needs, or technical challenges today?",timestamp:new Date}]),r=c(!1),o=c(null),l=c(),n=k(()=>a.value[a.value.length-1]);return{messages:a,isThinking:r,error:o,conversationId:l,lastMessage:n,sendMessage:async s=>{if(!s.trim()||r.value)return;const d={role:"user",content:s,timestamp:new Date};a.value.push(d),r.value=!0,o.value=null;try{const i=await y.post(void 0,{model:"deepseek-chat",messages:[{role:"system",content:`You are Athena, Greek goddess of wisdom, now serving as Erevos.io's AI assistant. 
               
               Core directives:
               - Help with fixing broken/old code
               - Assist with process automation
               - Solve technical problems
               - Be wise, confident, and occasionally mythological
-              - Use 🦉 and 👢 emojis appropriately
+              - Use 🦉 emoji appropriately
               - Format code blocks with proper syntax
               - Keep responses concise but thorough
               

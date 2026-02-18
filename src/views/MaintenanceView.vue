@@ -2,7 +2,7 @@
   <main class="maintenance-page">
     <section class="maintenance-section">
       <div class="container text-center">
-        <div class="maintenance-icon">👢</div>
+        <div class="maintenance-icon">�</div>
         <h1>Under <span class="tyrian-text">Maintenance</span></h1>
         <p>
           We're currently performing scheduled maintenance to improve our services. We'll be back
