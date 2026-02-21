@@ -2,8 +2,11 @@
   <main class="pricing-page">
     <section class="page-hero">
       <div class="container">
-        <h1>What It <span class="tyrian-text">Costs</span></h1>
-        <p>Straight up pricing. No hidden fees, no gotchas.</p>
+        <h1>
+          {{ t('pricing.title') }}
+          <span class="tyrian-text">{{ t('pricing.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('pricing.subtitle') }}</p>
       </div>
     </section>
 
@@ -28,7 +31,7 @@
               </li>
             </ul>
             <router-link to="/contact" class="btn" :class="{ 'btn-outline': !plan.featured }">
-              Get Started
+              {{ t('pricing.getStarted') }}
             </router-link>
           </div>
         </div>
@@ -38,42 +41,45 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from '../composables/useI18n'
 
-const plans = ref([
+const { t } = useI18n()
+
+const plans = computed(() => [
   {
-    name: 'Starter',
-    price: '$999',
-    period: '/project',
-    description: 'Quick fixes, code reviews — get things done fast',
-    features: ['Bug fixing', 'Code review', 'Up to 10 hours', 'Email support'],
+    name: t('plan1.name'),
+    price: t('plan1.price'),
+    period: t('plan1.period'),
+    description: t('plan1.desc'),
+    features: [t('plan1.feat1'), t('plan1.feat2'), t('plan1.feat3'), t('plan1.feat4')],
     featured: false,
   },
   {
-    name: 'Professional',
-    price: '$2,999',
-    period: '/month',
-    description: 'For teams that need ongoing dev work and automation',
+    name: t('plan2.name'),
+    price: t('plan2.price'),
+    period: t('plan2.period'),
+    description: t('plan2.desc'),
     features: [
-      'Everything in Starter',
-      'Process automation',
-      'Priority support',
-      'Up to 40 hours',
-      'AI-powered code analysis',
+      t('plan2.feat1'),
+      t('plan2.feat2'),
+      t('plan2.feat3'),
+      t('plan2.feat4'),
+      t('plan2.feat5'),
     ],
     featured: true,
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
-    period: '',
-    description: "Big project? Let's talk and work something out",
+    name: t('plan3.name'),
+    price: t('plan3.price'),
+    period: t('plan3.period'),
+    description: t('plan3.desc'),
     features: [
-      'Everything in Professional',
-      'Dedicated team',
-      'Custom SLA',
-      'Architecture review',
-      '24/7 support',
+      t('plan3.feat1'),
+      t('plan3.feat2'),
+      t('plan3.feat3'),
+      t('plan3.feat4'),
+      t('plan3.feat5'),
     ],
     featured: false,
   },

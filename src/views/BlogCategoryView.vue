@@ -3,20 +3,22 @@
     <section class="page-hero">
       <div class="container">
         <router-link to="/blog" class="back-link">
-          <i class="fas fa-arrow-left"></i> Back to Blog
+          <i class="fas fa-arrow-left"></i> {{ t('blogCategory.backToBlog') }}
         </router-link>
         <h1>
-          Category: <span class="tyrian-text">{{ categoryName }}</span>
+          {{ t('blogCategory.category') }} <span class="tyrian-text">{{ categoryName }}</span>
         </h1>
-        <p>Browse posts in the {{ categoryName }} category</p>
+        <p>
+          {{ t('blogCategory.browseIn') }} {{ categoryName }} {{ t('blogCategory.categorySuffix') }}
+        </p>
       </div>
     </section>
 
     <section class="category-section">
       <div class="container">
         <div class="card text-center">
-          <p>Posts for this category are coming soon. Check back later!</p>
-          <router-link to="/blog" class="btn mt-3">Browse All Posts</router-link>
+          <p>{{ t('blogCategory.comingSoon') }}</p>
+          <router-link to="/blog" class="btn mt-3">{{ t('blogCategory.browseAll') }}</router-link>
         </div>
       </div>
     </section>
@@ -26,8 +28,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from '../composables/useI18n'
 
 const route = useRoute()
+const { t } = useI18n()
 
 const categoryName = computed(() => {
   const cat = route.params.category as string

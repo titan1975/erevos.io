@@ -2,22 +2,25 @@
   <main class="careers-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Join <span class="tyrian-text">Erevos.io</span></h1>
-        <p>Build the future of software with us</p>
+        <h1>
+          {{ t('careers.title') }}
+          <span class="tyrian-text">{{ t('careers.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('careers.subtitle') }}</p>
       </div>
     </section>
 
     <section class="careers-section">
       <div class="container">
         <div class="section-title">
-          <h2>Open <span>Positions</span></h2>
-          <p>We're always looking for talented people to join our team</p>
+          <h2>{{ t('careers.openPositions') }}</h2>
+          <p>{{ t('careers.lookingForTalent') }}</p>
         </div>
 
         <div class="card text-center">
-          <h3>No open positions at the moment</h3>
+          <h3>{{ t('careers.noPositions') }}</h3>
           <p class="mt-2" style="color: var(--text-gray)">
-            We're not currently hiring, but we'd love to hear from you. Send your resume to
+            {{ t('careers.sendResume') }}
             <a href="mailto:careers@erevos.io" style="color: var(--tyrian-purple)"
               >careers@erevos.io</a
             >
@@ -27,6 +30,12 @@
     </section>
   </main>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
+</script>
 
 <style scoped>
 .page-hero {

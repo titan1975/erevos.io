@@ -2,8 +2,10 @@
   <main class="team-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Our <span class="tyrian-text">Team</span></h1>
-        <p>Meet the experts behind Erevos.io</p>
+        <h1>
+          {{ t('team.title') }} <span class="tyrian-text">{{ t('team.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('team.subtitle') }}</p>
       </div>
     </section>
 
@@ -25,18 +27,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from '../composables/useI18n'
 
-const team = ref([
+const { t } = useI18n()
+
+const team = computed(() => [
   {
-    name: 'Euclides',
-    role: 'Founder & Lead Developer',
-    bio: 'Full-stack developer with a passion for fixing broken code and building elegant solutions.',
+    name: t('team1.name'),
+    role: t('team1.role'),
+    bio: t('team1.bio'),
   },
   {
-    name: 'Join Us',
-    role: 'Your Role Here',
-    bio: 'We are always looking for talented individuals to join our growing team.',
+    name: t('team2.name'),
+    role: t('team2.role'),
+    bio: t('team2.bio'),
   },
 ])
 </script>

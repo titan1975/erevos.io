@@ -2,8 +2,10 @@
   <main class="faq-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Frequently Asked <span class="tyrian-text">Questions</span></h1>
-        <p>Find answers to common questions about our services</p>
+        <h1>
+          {{ t('faq.title') }} <span class="tyrian-text">{{ t('faq.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('faq.subtitle') }}</p>
       </div>
     </section>
 
@@ -31,7 +33,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
 
 const openIndex = ref<number | null>(null)
 
@@ -39,26 +44,22 @@ const toggle = (index: number) => {
   openIndex.value = openIndex.value === index ? null : index
 }
 
-const faqs = ref([
+const faqs = computed(() => [
   {
-    question: 'What do you actually do?',
-    answer:
-      "We fix broken code, automate repetitive processes, help with architecture decisions, modernize old systems, build APIs, and do custom development. Basically — if it's a software problem, we can probably help.",
+    question: t('faq1.q'),
+    answer: t('faq1.a'),
   },
   {
-    question: 'How long does a project take?',
-    answer:
-      "Depends on the mess. Small fixes? A few days. Bigger projects? Usually 2-8 weeks. We'll give you a straight estimate upfront — no surprises.",
+    question: t('faq2.q'),
+    answer: t('faq2.a'),
   },
   {
-    question: 'Do you stick around after launch?',
-    answer:
-      "Yeah, we do. We offer support packages to keep things running smooth. We're not the type to ship and disappear.",
+    question: t('faq3.q'),
+    answer: t('faq3.a'),
   },
   {
-    question: 'How do I get started?',
-    answer:
-      "Just hit us up through the contact page or email hello@erevos.io. We'll have a real conversation about what you need — no sales pitch, no pressure.",
+    question: t('faq4.q'),
+    answer: t('faq4.a'),
   },
 ])
 </script>

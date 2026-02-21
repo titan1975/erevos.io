@@ -7,8 +7,7 @@
         <div class="footer-section company-info">
           <router-link to="/" class="footer-logo"> erevos<span>.io</span> </router-link>
           <p class="footer-description">
-            We fix broken code, automate the boring stuff, and help you ship faster. No fluff, no
-            corporate speak — just honest engineering work.
+            {{ t('footer.description') }}
           </p>
 
           <!-- Social Links -->
@@ -29,12 +28,12 @@
 
         <!-- Quick Links -->
         <div class="footer-section">
-          <h4>Quick Links</h4>
+          <h4>{{ t('footer.quickLinks') }}</h4>
           <ul class="footer-links">
             <li v-for="link in quickLinks" :key="link.path">
               <router-link :to="link.path">
                 <i class="fas fa-chevron-right"></i>
-                {{ link.name }}
+                {{ t(link.nameKey) }}
               </router-link>
             </li>
           </ul>
@@ -42,12 +41,12 @@
 
         <!-- Services -->
         <div class="footer-section">
-          <h4>Our Services</h4>
+          <h4>{{ t('footer.ourServices') }}</h4>
           <ul class="footer-links">
             <li v-for="service in services" :key="service.path">
               <router-link :to="service.path">
                 <i class="fas fa-chevron-right"></i>
-                {{ service.name }}
+                {{ t(service.nameKey) }}
               </router-link>
             </li>
           </ul>
@@ -55,7 +54,7 @@
 
         <!-- Contact Info -->
         <div class="footer-section">
-          <h4>Get In Touch</h4>
+          <h4>{{ t('footer.getInTouch') }}</h4>
           <ul class="contact-info">
             <li>
               <i class="fas fa-envelope"></i>
@@ -68,14 +67,14 @@
       <!-- Bottom Bar -->
       <div class="footer-bottom">
         <div class="copyright">
-          <p>&copy; {{ currentYear }} Erevos.io. All rights reserved.</p>
+          <p>&copy; {{ currentYear }} {{ t('footer.copyright') }}</p>
         </div>
         <div class="legal-links">
-          <router-link to="/privacy">Privacy Policy</router-link>
+          <router-link to="/privacy">{{ t('footer.privacy') }}</router-link>
           <span class="separator">|</span>
-          <router-link to="/terms">Terms of Service</router-link>
+          <router-link to="/terms">{{ t('footer.terms') }}</router-link>
           <span class="separator">|</span>
-          <router-link to="/cookies">Cookie Policy</router-link>
+          <router-link to="/cookies">{{ t('footer.cookies') }}</router-link>
         </div>
       </div>
 
@@ -93,7 +92,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
 
 // Types
 interface SocialLink {
@@ -103,15 +105,12 @@ interface SocialLink {
 }
 
 interface FooterLink {
-  name: string
+  nameKey: string
   path: string
 }
 
 interface ContactInfo {
-  address: string
-  phone: string
   email: string
-  hours: string
 }
 
 // State
@@ -120,51 +119,32 @@ const showBackToTop = ref<boolean>(false)
 
 // Data
 const socialLinks = ref<SocialLink[]>([
-  {
-    name: 'Twitter',
-    icon: 'fa-twitter',
-    url: 'https://twitter.com/erevos_io',
-  },
-  {
-    name: 'LinkedIn',
-    icon: 'fa-linkedin-in',
-    url: 'https://linkedin.com/company/erevos-io',
-  },
-  {
-    name: 'GitHub',
-    icon: 'fa-github',
-    url: 'https://github.com/erevos-io',
-  },
-  {
-    name: 'Instagram',
-    icon: 'fa-instagram',
-    url: 'https://instagram.com/erevos.io',
-  },
+  { name: 'Twitter', icon: 'fa-twitter', url: 'https://twitter.com/erevos_io' },
+  { name: 'LinkedIn', icon: 'fa-linkedin-in', url: 'https://linkedin.com/company/erevos-io' },
+  { name: 'GitHub', icon: 'fa-github', url: 'https://github.com/erevos-io' },
+  { name: 'Instagram', icon: 'fa-instagram', url: 'https://instagram.com/erevos.io' },
 ])
 
-const quickLinks = ref<FooterLink[]>([
-  { name: 'Home', path: '/' },
-  { name: 'Services', path: '/services' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Projects', path: '/projects' },
-  { name: 'Contact', path: '/contact' },
-  { name: 'Blog', path: '/blog' },
+const quickLinks = computed<FooterLink[]>(() => [
+  { nameKey: 'nav.home', path: '/' },
+  { nameKey: 'nav.services', path: '/services' },
+  { nameKey: 'footer.aboutUs', path: '/about' },
+  { nameKey: 'nav.projects', path: '/projects' },
+  { nameKey: 'nav.contact', path: '/contact' },
+  { nameKey: 'footer.blog', path: '/blog' },
 ])
 
-const services = ref<FooterLink[]>([
-  { name: 'Code Fixing', path: '/services/code-fixing' },
-  { name: 'Process Automation', path: '/services/automation' },
-  { name: 'Problem Solving', path: '/services/problem-solving' },
-  { name: 'Legacy Modernization', path: '/services/legacy-modernization' },
-  { name: 'API Integration', path: '/services/api-integration' },
-  { name: 'Technical Consulting', path: '/services/consulting' },
+const services = computed<FooterLink[]>(() => [
+  { nameKey: 'footer.codeFixing', path: '/services/code-fixing' },
+  { nameKey: 'footer.processAutomation', path: '/services/automation' },
+  { nameKey: 'footer.problemSolving', path: '/services/problem-solving' },
+  { nameKey: 'footer.legacyModernization', path: '/services/legacy-modernization' },
+  { nameKey: 'footer.apiIntegration', path: '/services/api-integration' },
+  { nameKey: 'footer.techConsulting', path: '/services/consulting' },
 ])
 
 const contact = ref<ContactInfo>({
-  address: '',
-  phone: '',
   email: 'hello@erevos.io',
-  hours: '',
 })
 
 // Methods
@@ -292,7 +272,7 @@ footer::after {
 .social-icon {
   width: 40px;
   height: 40px;
-  background: rgba(102, 2, 60, 0.1);
+  background: rgba(155, 27, 109, 0.1);
   border: 1px solid var(--tyrian-purple);
   border-radius: 50%;
   display: flex;
@@ -400,7 +380,7 @@ footer::after {
 /* Footer Bottom */
 .footer-bottom {
   padding: 25px 0;
-  border-top: 1px solid rgba(102, 2, 60, 0.3);
+  border-top: 1px solid rgba(155, 27, 109, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;

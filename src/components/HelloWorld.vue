@@ -10,23 +10,23 @@
           <div class="hero-content">
             <div class="hero-badge animate-fade-in">
               <span class="badge-dot"></span>
-              No fluff. No drama. Just code that works.
+              {{ t('hero.badge') }}
             </div>
             <h1 class="animate-fade-in delay-1">
-              Your Code Is <span class="tyrian-text">A Mess</span>? <br />Let's
-              <span class="tyrian-text">Sort It Out</span>.
+              {{ t('hero.title1') }} <span class="tyrian-text">{{ t('hero.titleHighlight1') }}</span
+              >? <br />{{ t('hero.title2') }}
+              <span class="tyrian-text">{{ t('hero.titleHighlight2') }}</span
+              >.
             </h1>
             <p class="hero-sub animate-fade-in delay-2">
-              Look, we get it — stuff breaks, deadlines pile up, and that legacy codebase nobody
-              wants to touch keeps getting worse. We're the team you call when you need someone to
-              actually roll up their sleeves and get it done. No corporate jargon, just real work.
+              {{ t('hero.subtitle') }}
             </p>
             <div class="hero-btns animate-fade-in delay-3">
               <router-link to="/contact" class="btn btn-glow">
-                Let's Talk <i class="fas fa-arrow-right"></i>
+                {{ t('hero.btnTalk') }} <i class="fas fa-arrow-right"></i>
               </router-link>
               <router-link to="/services" class="btn btn-outline">
-                What We Do <i class="fas fa-cogs"></i>
+                {{ t('hero.btnServices') }} <i class="fas fa-cogs"></i>
               </router-link>
             </div>
             <div class="hero-trust animate-fade-in delay-4">
@@ -36,7 +36,7 @@
                 <span class="avatar">D</span>
                 <span class="avatar">+</span>
               </div>
-              <span class="trust-text">Real devs &amp; startups trust us with their code</span>
+              <span class="trust-text">{{ t('hero.trust') }}</span>
             </div>
           </div>
           <div class="hero-visual animate-fade-in delay-2">
@@ -45,12 +45,12 @@
                 <span class="dot red"></span>
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
-                <span class="code-title">fix_legacy.py</span>
+                <span class="code-title">{{ t('hero.codeTitle') }}</span>
               </div>
               <div class="code-body">
                 <div class="code-line">
                   <span class="line-num">1</span>
-                  <span class="code-comment"># Before Erevos.io</span>
+                  <span class="code-comment">{{ t('hero.codeBefore') }}</span>
                 </div>
                 <div class="code-line strike">
                   <span class="line-num">2</span>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="code-line">
                   <span class="line-num">5</span>
-                  <span class="code-comment"># After Erevos.io ✨</span>
+                  <span class="code-comment">{{ t('hero.codeAfter') }}</span>
                 </div>
                 <div class="code-line">
                   <span class="line-num">6</span>
@@ -98,9 +98,11 @@
     <section class="what-we-do">
       <div class="container">
         <div class="section-title">
-          <span class="section-tag">THE REAL DEAL</span>
-          <h2>Three Problems. <span>One Team.</span></h2>
-          <p>We don't do everything — we do these three things really damn well</p>
+          <span class="section-tag">{{ t('whatwedo.tag') }}</span>
+          <h2>
+            {{ t('whatwedo.title') }} <span>{{ t('whatwedo.titleHighlight') }}</span>
+          </h2>
+          <p>{{ t('whatwedo.subtitle') }}</p>
         </div>
 
         <div class="pillars-grid">
@@ -116,7 +118,7 @@
               </li>
             </ul>
             <router-link :to="pillar.link" class="pillar-cta">
-              Learn More <i class="fas fa-arrow-right"></i>
+              {{ t('services.learnMore') }} <i class="fas fa-arrow-right"></i>
             </router-link>
           </div>
         </div>
@@ -127,9 +129,11 @@
     <section class="services-preview">
       <div class="container">
         <div class="section-title">
-          <span class="section-tag">HOW WE HELP</span>
-          <h2>Stuff We're <span>Good At</span></h2>
-          <p>No buzzwords, just what we actually deliver</p>
+          <span class="section-tag">{{ t('services.tag') }}</span>
+          <h2>
+            {{ t('services.title') }} <span>{{ t('services.titleHighlight') }}</span>
+          </h2>
+          <p>{{ t('services.subtitle') }}</p>
         </div>
 
         <div class="services-grid">
@@ -145,7 +149,7 @@
 
         <div class="text-center mt-5">
           <router-link to="/services" class="btn btn-outline">
-            See Everything We Do <i class="fas fa-arrow-right"></i>
+            {{ t('services.seeAll') }} <i class="fas fa-arrow-right"></i>
           </router-link>
         </div>
       </div>
@@ -155,9 +159,11 @@
     <section class="process-section">
       <div class="container">
         <div class="section-title">
-          <span class="section-tag">NO MYSTERY</span>
-          <h2>How It <span>Works</span></h2>
-          <p>Four steps. No surprises. No hidden fees.</p>
+          <span class="section-tag">{{ t('process.tag') }}</span>
+          <h2>
+            {{ t('process.title') }} <span>{{ t('process.titleHighlight') }}</span>
+          </h2>
+          <p>{{ t('process.subtitle') }}</p>
         </div>
 
         <div class="process-steps">
@@ -175,17 +181,19 @@
     <section class="cta-banner">
       <div class="container">
         <div class="cta-content">
-          <h2>Got a <span class="tyrian-text">Problem?</span> Let's Fix It.</h2>
+          <h2>
+            {{ t('cta.title') }} <span class="tyrian-text">{{ t('cta.titleHighlight') }}</span>
+            {{ t('cta.titleEnd') }}
+          </h2>
           <p>
-            Drop us a line. We'll look at your project, give you honest feedback, and go from there.
-            No pressure.
+            {{ t('cta.subtitle') }}
           </p>
           <div class="cta-btns">
             <router-link to="/contact" class="btn btn-lg btn-glow">
-              Let's Chat <i class="fas fa-rocket"></i>
+              {{ t('cta.btnChat') }} <i class="fas fa-rocket"></i>
             </router-link>
             <router-link to="/pricing" class="btn btn-lg btn-outline">
-              See What It Costs
+              {{ t('cta.btnPricing') }}
             </router-link>
           </div>
         </div>
@@ -195,98 +203,77 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import ServiceCard from '../components/ServiceCard.vue'
+import { useI18n } from '../composables/useI18n'
 import type { Service } from '../types'
 
+const { t } = useI18n()
+
 // ── Stats ──
-const stats = ref([
-  { value: '150+', label: 'Projects Done' },
-  { value: '99.9%', label: 'Uptime. For Real.' },
-  { value: '24/7', label: "We're Around" },
-  { value: '50+', label: 'Happy Partners' },
+const stats = computed(() => [
+  { value: '150+', label: t('stats.projects') },
+  { value: '99.9%', label: t('stats.uptime') },
+  { value: '24/7', label: t('stats.available') },
+  { value: '50+', label: t('stats.partners') },
 ])
 
 // ── Three Pillars ──
-const pillars = ref([
+const pillars = computed(() => [
   {
     icon: 'fa-wrench',
-    title: 'Fix Broken Code',
-    description:
-      'We rescue legacy systems, squash bugs, and refactor messy codebases into clean, maintainable software.',
-    features: ['Legacy rescue', 'Bug extermination', 'Performance tuning', 'Code modernization'],
+    title: t('pillar1.title'),
+    description: t('pillar1.desc'),
+    features: [t('pillar1.feat1'), t('pillar1.feat2'), t('pillar1.feat3'), t('pillar1.feat4')],
     link: '/services/code-fixing',
   },
   {
     icon: 'fa-robot',
-    title: 'Automate Everything',
-    description:
-      'From CI/CD pipelines to business workflows — we eliminate repetitive tasks so your team can focus on what matters.',
-    features: ['CI/CD pipelines', 'Workflow automation', 'API orchestration', 'Data pipelines'],
+    title: t('pillar2.title'),
+    description: t('pillar2.desc'),
+    features: [t('pillar2.feat1'), t('pillar2.feat2'), t('pillar2.feat3'), t('pillar2.feat4')],
     link: '/services/automation',
   },
   {
     icon: 'fa-brain',
-    title: 'Solve Hard Problems',
-    description:
-      'Architecture reviews, system design, and custom solutions for the challenges that stump other teams.',
-    features: [
-      'System architecture',
-      'Technical consulting',
-      'Custom solutions',
-      'Scalability planning',
-    ],
+    title: t('pillar3.title'),
+    description: t('pillar3.desc'),
+    features: [t('pillar3.feat1'), t('pillar3.feat2'), t('pillar3.feat3'), t('pillar3.feat4')],
     link: '/services/problem-solving',
   },
 ])
 
 // ── Services ──
-const services = ref<Service[]>([
+const services = computed<Service[]>(() => [
   {
     id: 1,
     icon: 'fa-code',
-    title: 'Code Fixing & Cleanup',
-    description: "Your code is broken or messy? We'll get in there and make it work properly.",
-    features: ['Legacy code rescue', 'Bug fixing', 'Performance boost'],
+    title: t('service1.title'),
+    description: t('service1.desc'),
+    features: [t('service1.feat1'), t('service1.feat2'), t('service1.feat3')],
   },
   {
     id: 2,
     icon: 'fa-robot',
-    title: 'Automation',
-    description: "Stop doing things manually. We'll set up the pipelines and workflows for you.",
-    features: ['Workflow automation', 'API integrations', 'Data pipeline setup'],
+    title: t('service2.title'),
+    description: t('service2.desc'),
+    features: [t('service2.feat1'), t('service2.feat2'), t('service2.feat3')],
   },
   {
     id: 3,
     icon: 'fa-brain',
-    title: 'Technical Consulting',
-    description: "Need a straight answer about your tech stack? We'll give you one.",
-    features: ['Honest tech advice', 'Custom builds', 'Architecture planning'],
+    title: t('service3.title'),
+    description: t('service3.desc'),
+    features: [t('service3.feat1'), t('service3.feat2'), t('service3.feat3')],
   },
 ])
 
 // ── Process Steps ──
-const processSteps = ref([
-  {
-    icon: 'fa-comments',
-    title: 'We Talk',
-    desc: "You tell us what's broken. We listen — no sales pitch.",
-  },
-  {
-    icon: 'fa-search',
-    title: 'We Dig In',
-    desc: 'We look at your code, find the real problems, and tell you straight.',
-  },
-  {
-    icon: 'fa-hammer',
-    title: 'We Build & Fix',
-    desc: 'Clean code, tested, production-ready. No shortcuts.',
-  },
-  {
-    icon: 'fa-rocket',
-    title: 'We Ship & Support',
-    desc: 'It goes live, it works, and we stick around if you need us.',
-  },
+const processSteps = computed(() => [
+  { icon: 'fa-comments', title: t('process1.title'), desc: t('process1.desc') },
+  { icon: 'fa-search', title: t('process2.title'), desc: t('process2.desc') },
+  { icon: 'fa-hammer', title: t('process3.title'), desc: t('process3.desc') },
+  { icon: 'fa-rocket', title: t('process4.title'), desc: t('process4.desc') },
 ])
 
 // ── Helpers ──
@@ -354,7 +341,7 @@ const particleStyle = (n: number) => ({
   align-items: center;
   gap: 10px;
   padding: 8px 20px;
-  background: rgba(102, 2, 60, 0.15);
+  background: rgba(155, 27, 109, 0.15);
   border: 1px solid var(--tyrian-purple);
   border-radius: 30px;
   font-size: 13px;
@@ -443,7 +430,7 @@ const particleStyle = (n: number) => ({
   cursor: pointer;
   box-shadow:
     0 4px 20px var(--tyrian-glow),
-    0 0 40px rgba(102, 2, 60, 0.15);
+    0 0 40px rgba(155, 27, 109, 0.15);
   font-family: 'Inter', sans-serif;
 }
 
@@ -451,7 +438,7 @@ const particleStyle = (n: number) => ({
   transform: translateY(-3px);
   box-shadow:
     0 8px 30px var(--tyrian-glow),
-    0 0 60px rgba(102, 2, 60, 0.25);
+    0 0 60px rgba(155, 27, 109, 0.25);
   background: linear-gradient(135deg, var(--tyrian-light), var(--tyrian-purple));
 }
 
@@ -623,7 +610,7 @@ const particleStyle = (n: number) => ({
 .section-tag {
   display: inline-block;
   padding: 6px 16px;
-  background: rgba(102, 2, 60, 0.15);
+  background: rgba(155, 27, 109, 0.15);
   border: 1px solid var(--tyrian-dark);
   border-radius: 20px;
   font-size: 12px;
@@ -830,7 +817,7 @@ const particleStyle = (n: number) => ({
   justify-content: center;
   box-shadow:
     0 0 60px var(--tyrian-glow),
-    0 0 120px rgba(102, 2, 60, 0.15);
+    0 0 120px rgba(155, 27, 109, 0.15);
   animation: pulsate 4s ease-in-out infinite;
   z-index: 1;
 }
@@ -847,7 +834,7 @@ const particleStyle = (n: number) => ({
   50% {
     box-shadow:
       0 0 80px var(--tyrian-glow),
-      0 0 120px rgba(102, 2, 60, 0.2);
+      0 0 120px rgba(155, 27, 109, 0.2);
   }
 }
 
@@ -855,7 +842,7 @@ const particleStyle = (n: number) => ({
   position: absolute;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(102, 2, 60, 0.2), transparent 70%);
+  background: radial-gradient(circle, rgba(155, 27, 109, 0.2), transparent 70%);
   border-radius: 50%;
   z-index: 0;
 }
@@ -888,7 +875,7 @@ const particleStyle = (n: number) => ({
 .cap-icon {
   width: 40px;
   height: 40px;
-  background: rgba(102, 2, 60, 0.2);
+  background: rgba(155, 27, 109, 0.2);
   border: 1px solid var(--tyrian-dark);
   border-radius: 10px;
   display: flex;
@@ -1025,7 +1012,7 @@ const particleStyle = (n: number) => ({
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(102, 2, 60, 0.1), transparent 50%);
+  background: radial-gradient(circle at center, rgba(155, 27, 109, 0.1), transparent 50%);
   animation: rotateBg 20s linear infinite;
 }
 

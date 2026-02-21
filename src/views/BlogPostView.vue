@@ -3,7 +3,7 @@
     <section class="page-hero">
       <div class="container">
         <router-link to="/blog" class="back-link">
-          <i class="fas fa-arrow-left"></i> Back to Blog
+          <i class="fas fa-arrow-left"></i> {{ t('blogPost.backToBlog') }}
         </router-link>
         <h1>{{ postTitle }}</h1>
       </div>
@@ -12,9 +12,7 @@
     <section class="post-section">
       <div class="container">
         <article class="card post-content">
-          <p>
-            This blog post is coming soon. Stay tuned for detailed content about {{ postTitle }}.
-          </p>
+          <p>{{ t('blogPost.comingSoon') }} {{ postTitle }}.</p>
         </article>
       </div>
     </section>
@@ -24,8 +22,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from '../composables/useI18n'
 
 const route = useRoute()
+const { t } = useI18n()
 
 const postTitle = computed(() => {
   const slug = route.params.slug as string

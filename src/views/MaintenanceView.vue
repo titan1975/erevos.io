@@ -3,18 +3,24 @@
     <section class="maintenance-section">
       <div class="container text-center">
         <div class="maintenance-icon">�</div>
-        <h1>Under <span class="tyrian-text">Maintenance</span></h1>
-        <p>
-          We're currently performing scheduled maintenance to improve our services. We'll be back
-          shortly!
-        </p>
+        <h1>
+          {{ t('maintenance.title') }}
+          <span class="tyrian-text">{{ t('maintenance.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('maintenance.desc') }}</p>
         <div class="maintenance-note mt-4">
-          <span>We're upgrading our systems...</span>
+          <span>{{ t('maintenance.note') }}</span>
         </div>
       </div>
     </section>
   </main>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
+</script>
 
 <style scoped>
 .maintenance-section {

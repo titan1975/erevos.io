@@ -2,8 +2,11 @@
   <main class="services-page">
     <section class="page-hero">
       <div class="container">
-        <h1>What We <span class="tyrian-text">Actually Do</span></h1>
-        <p>No buzzwords. Here's how we can help.</p>
+        <h1>
+          {{ t('servicesPage.title1') }}
+          <span class="tyrian-text">{{ t('servicesPage.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('servicesPage.subtitle') }}</p>
       </div>
     </section>
 
@@ -25,52 +28,55 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import ServiceCard from '../components/ServiceCard.vue'
+import { useI18n } from '../composables/useI18n'
 import type { Service } from '../types'
 
-const services = ref<Service[]>([
+const { t } = useI18n()
+
+const services = computed<Service[]>(() => [
   {
     id: 1,
     icon: 'fa-code',
-    title: 'Code Fixing & Cleanup',
-    description: "Your code is broken or messy? We'll get in there and make it work properly.",
-    features: ['Legacy code rescue', 'Bug fixing', 'Performance boost'],
+    title: t('service1.title'),
+    description: t('service1.desc'),
+    features: [t('service1.feat1'), t('service1.feat2'), t('service1.feat3')],
   },
   {
     id: 2,
     icon: 'fa-robot',
-    title: 'Automation',
-    description: "Stop doing things manually. We'll set up the pipelines and workflows for you.",
-    features: ['Workflow automation', 'API integrations', 'Data pipeline setup'],
+    title: t('service2.title'),
+    description: t('service2.desc'),
+    features: [t('service2.feat1'), t('service2.feat2'), t('service2.feat3')],
   },
   {
     id: 3,
     icon: 'fa-brain',
-    title: 'Technical Consulting',
-    description: "Need a straight answer about your tech stack? We'll give you one.",
-    features: ['Honest tech advice', 'Custom builds', 'Architecture planning'],
+    title: t('service3.title'),
+    description: t('service3.desc'),
+    features: [t('service3.feat1'), t('service3.feat2'), t('service3.feat3')],
   },
   {
     id: 4,
     icon: 'fa-server',
-    title: 'Legacy Rescue',
-    description: "Old system nobody wants to touch? We'll modernize it without burning it down.",
-    features: ['Cloud migration', 'Microservices', 'Containerization'],
+    title: t('service4.title'),
+    description: t('service4.desc'),
+    features: [t('service4.feat1'), t('service4.feat2'), t('service4.feat3')],
   },
   {
     id: 5,
     icon: 'fa-plug',
-    title: 'API Integration',
-    description: "Need your systems to talk to each other? We'll wire them up properly.",
-    features: ['REST & GraphQL APIs', 'Third-party hookups', 'Webhook systems'],
+    title: t('service5.title'),
+    description: t('service5.desc'),
+    features: [t('service5.feat1'), t('service5.feat2'), t('service5.feat3')],
   },
   {
     id: 6,
     icon: 'fa-lightbulb',
-    title: 'Tech Strategy',
-    description: "Not sure what stack to use or how to scale? We'll help you figure it out.",
-    features: ['Architecture review', 'Stack selection', 'Best practices'],
+    title: t('service6.title'),
+    description: t('service6.desc'),
+    features: [t('service6.feat1'), t('service6.feat2'), t('service6.feat3')],
   },
 ])
 </script>

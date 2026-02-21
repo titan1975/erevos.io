@@ -2,7 +2,10 @@
   <main class="project-detail-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Project <span class="tyrian-text">Case Study</span></h1>
+        <h1>
+          {{ t('projectDetail.title') }}
+          <span class="tyrian-text">{{ t('projectDetail.titleHighlight') }}</span>
+        </h1>
         <p>{{ projectTitle }}</p>
       </div>
     </section>
@@ -12,11 +15,10 @@
         <div class="card">
           <h2>{{ projectTitle }}</h2>
           <p class="project-description">
-            Full case study coming soon. Want the details? Just reach out — we're happy to walk you
-            through it.
+            {{ t('projectDetail.desc') }}
           </p>
           <router-link to="/projects" class="btn btn-outline mt-3">
-            <i class="fas fa-arrow-left"></i> Back to Projects
+            <i class="fas fa-arrow-left"></i> {{ t('projectDetail.backToProjects') }}
           </router-link>
         </div>
       </div>
@@ -27,8 +29,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from '../composables/useI18n'
 
 const route = useRoute()
+const { t } = useI18n()
 
 const projectTitle = computed(() => {
   const id = route.params.id as string

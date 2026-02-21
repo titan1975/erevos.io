@@ -2,8 +2,14 @@
   <main class="service-detail-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Service <span class="tyrian-text">Details</span></h1>
-        <p>Learn more about our {{ $route.params.id }} service</p>
+        <h1>
+          {{ t('serviceDetail.title') }}
+          <span class="tyrian-text">{{ t('serviceDetail.titleHighlight') }}</span>
+        </h1>
+        <p>
+          {{ t('serviceDetail.learnAbout') }} {{ $route.params.id }}
+          {{ t('serviceDetail.service') }}
+        </p>
       </div>
     </section>
 
@@ -12,11 +18,10 @@
         <div class="card">
           <h2>{{ serviceTitle }}</h2>
           <p class="service-description">
-            This is what we do best. Hit us up if you want to know more or just want to talk it
-            through.
+            {{ t('serviceDetail.desc') }}
           </p>
           <router-link to="/contact" class="btn mt-3">
-            Let's Talk <i class="fas fa-arrow-right"></i>
+            {{ t('serviceDetail.btnTalk') }} <i class="fas fa-arrow-right"></i>
           </router-link>
         </div>
       </div>
@@ -27,8 +32,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from '../composables/useI18n'
 
 const route = useRoute()
+const { t } = useI18n()
 
 const serviceTitle = computed(() => {
   const id = route.params.id as string

@@ -2,50 +2,46 @@
   <main class="legal-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Cookie <span class="tyrian-text">Policy</span></h1>
-        <p>Last updated: February 2026</p>
+        <h1>
+          {{ t('cookies.title') }}
+          <span class="tyrian-text">{{ t('cookies.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('cookies.lastUpdated') }}</p>
       </div>
     </section>
 
     <section class="legal-section">
       <div class="container">
         <article class="card legal-content">
-          <h2>1. What Are Cookies</h2>
-          <p>
-            Cookies are small text files stored on your device when you visit our website. They help
-            us provide a better user experience.
-          </p>
+          <h2>{{ t('cookies.h2_1') }}</h2>
+          <p>{{ t('cookies.p1') }}</p>
 
-          <h2>2. How We Use Cookies</h2>
-          <p>
-            We use cookies for essential website functionality, analytics, and to remember your
-            preferences.
-          </p>
+          <h2>{{ t('cookies.h2_2') }}</h2>
+          <p>{{ t('cookies.p2') }}</p>
 
-          <h2>3. Types of Cookies We Use</h2>
-          <p><strong>Essential Cookies:</strong> Required for the website to function properly.</p>
-          <p>
-            <strong>Analytics Cookies:</strong> Help us understand how visitors interact with our
-            website.
-          </p>
-          <p><strong>Preference Cookies:</strong> Remember your settings and choices.</p>
+          <h2>{{ t('cookies.h2_3') }}</h2>
+          <p>{{ t('cookies.p3a') }}</p>
+          <p>{{ t('cookies.p3b') }}</p>
+          <p>{{ t('cookies.p3c') }}</p>
 
-          <h2>4. Managing Cookies</h2>
-          <p>
-            You can control and manage cookies through your browser settings. Note that disabling
-            certain cookies may affect website functionality.
-          </p>
+          <h2>{{ t('cookies.h2_4') }}</h2>
+          <p>{{ t('cookies.p4') }}</p>
 
-          <h2>5. Questions?</h2>
+          <h2>{{ t('cookies.h2_5') }}</h2>
           <p>
-            Got questions about cookies? Reach out at
-            <a href="mailto:privacy@erevos.io">privacy@erevos.io</a>.
+            {{ t('cookies.p5') }}
           </p>
         </article>
       </div>
     </section>
   </main>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
+</script>
 
 <style scoped>
 .page-hero {

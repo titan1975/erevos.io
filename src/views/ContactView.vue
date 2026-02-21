@@ -2,8 +2,11 @@
   <main class="contact-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Let's <span class="tyrian-text">Talk</span></h1>
-        <p>Got a project? A problem? Just want to chat? We're here.</p>
+        <h1>
+          {{ t('contact.title1') }}
+          <span class="tyrian-text">{{ t('contact.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('contact.subtitle') }}</p>
       </div>
     </section>
 
@@ -11,63 +14,63 @@
       <div class="container">
         <div class="contact-grid grid-2">
           <div class="contact-form-wrapper">
-            <h2>Drop us a message</h2>
+            <h2>{{ t('contact.formTitle') }}</h2>
             <form @submit.prevent="submitForm" class="contact-form">
               <div class="form-group">
-                <label class="form-label">Name</label>
+                <label class="form-label">{{ t('contact.name') }}</label>
                 <input
                   v-model="formData.name"
                   type="text"
                   class="form-input"
                   :class="{ error: errors.name }"
-                  placeholder="Your name"
+                  :placeholder="t('contact.namePlaceholder')"
                 />
                 <p v-if="errors.name" class="error-message">{{ errors.name }}</p>
               </div>
 
               <div class="form-group">
-                <label class="form-label">Email</label>
+                <label class="form-label">{{ t('contact.email') }}</label>
                 <input
                   v-model="formData.email"
                   type="email"
                   class="form-input"
                   :class="{ error: errors.email }"
-                  placeholder="your@email.com"
+                  :placeholder="t('contact.emailPlaceholder')"
                 />
                 <p v-if="errors.email" class="error-message">{{ errors.email }}</p>
               </div>
 
               <div class="form-group">
-                <label class="form-label">Subject</label>
+                <label class="form-label">{{ t('contact.subject') }}</label>
                 <input
                   v-model="formData.subject"
                   type="text"
                   class="form-input"
                   :class="{ error: errors.subject }"
-                  placeholder="How can we help?"
+                  :placeholder="t('contact.subjectPlaceholder')"
                 />
                 <p v-if="errors.subject" class="error-message">{{ errors.subject }}</p>
               </div>
 
               <div class="form-group">
-                <label class="form-label">Service</label>
+                <label class="form-label">{{ t('contact.service') }}</label>
                 <select v-model="formData.service" class="form-input">
-                  <option value="">Select a service (optional)</option>
-                  <option value="code-fixing">Code Fixing & Refactoring</option>
-                  <option value="automation">Process Automation</option>
-                  <option value="problem-solving">Problem Solving</option>
-                  <option value="consulting">Technical Consulting</option>
+                  <option value="">{{ t('contact.serviceDefault') }}</option>
+                  <option value="code-fixing">{{ t('contact.serviceOption1') }}</option>
+                  <option value="automation">{{ t('contact.serviceOption2') }}</option>
+                  <option value="problem-solving">{{ t('contact.serviceOption3') }}</option>
+                  <option value="consulting">{{ t('contact.serviceOption4') }}</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label class="form-label">Message</label>
+                <label class="form-label">{{ t('contact.message') }}</label>
                 <textarea
                   v-model="formData.message"
                   class="form-textarea"
                   :class="{ error: errors.message }"
                   rows="5"
-                  placeholder="Tell us about your project..."
+                  :placeholder="t('contact.messagePlaceholder')"
                 ></textarea>
                 <p v-if="errors.message" class="error-message">{{ errors.message }}</p>
               </div>
@@ -80,14 +83,14 @@
               </div>
 
               <button type="submit" class="btn" :disabled="isSubmitting">
-                <span v-if="isSubmitting">Sending...</span>
-                <span v-else>Send Message <i class="fas fa-paper-plane"></i></span>
+                <span v-if="isSubmitting">{{ t('contact.sending') }}</span>
+                <span v-else>{{ t('contact.send') }} <i class="fas fa-paper-plane"></i></span>
               </button>
             </form>
           </div>
 
           <div class="contact-info-wrapper">
-            <h2>Get in touch</h2>
+            <h2>{{ t('contact.infoTitle') }}</h2>
             <ul class="contact-details">
               <li>
                 <i class="fas fa-envelope"></i>
@@ -103,7 +106,9 @@
 
 <script setup lang="ts">
 import { useContactForm } from '../composables/useContactForm'
+import { useI18n } from '../composables/useI18n'
 
+const { t } = useI18n()
 const { formData, errors, isSubmitting, submitStatus, submitMessage, submitForm } = useContactForm()
 </script>
 

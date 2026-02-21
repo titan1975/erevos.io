@@ -2,49 +2,43 @@
   <main class="legal-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Terms of <span class="tyrian-text">Service</span></h1>
-        <p>Last updated: February 2026</p>
+        <h1>
+          {{ t('terms.title') }} <span class="tyrian-text">{{ t('terms.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('terms.lastUpdated') }}</p>
       </div>
     </section>
 
     <section class="legal-section">
       <div class="container">
         <article class="card legal-content">
-          <h2>1. Acceptance of Terms</h2>
-          <p>
-            By accessing and using Erevos.io, you accept and agree to be bound by these Terms of
-            Service.
-          </p>
+          <h2>{{ t('terms.h2_1') }}</h2>
+          <p>{{ t('terms.p1') }}</p>
 
-          <h2>2. Services</h2>
-          <p>
-            Erevos.io provides software development, code fixing, process automation, and technical
-            consulting services as described on our website.
-          </p>
+          <h2>{{ t('terms.h2_2') }}</h2>
+          <p>{{ t('terms.p2') }}</p>
 
-          <h2>3. Intellectual Property</h2>
-          <p>
-            All content, code, and materials on this website are the property of Erevos.io unless
-            otherwise stated. Custom work delivered to clients becomes the client's property upon
-            full payment.
-          </p>
+          <h2>{{ t('terms.h2_3') }}</h2>
+          <p>{{ t('terms.p3') }}</p>
 
-          <h2>4. Limitation of Liability</h2>
-          <p>
-            Erevos.io shall not be liable for any indirect, incidental, special, or consequential
-            damages arising from the use of our services.
-          </p>
+          <h2>{{ t('terms.h2_4') }}</h2>
+          <p>{{ t('terms.p4') }}</p>
 
-          <h2>5. Questions?</h2>
+          <h2>{{ t('terms.h2_5') }}</h2>
           <p>
-            Got questions about these Terms? Reach out at
-            <a href="mailto:legal@erevos.io">legal@erevos.io</a>.
+            {{ t('terms.p5') }}
           </p>
         </article>
       </div>
     </section>
   </main>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
+</script>
 
 <style scoped>
 .page-hero {

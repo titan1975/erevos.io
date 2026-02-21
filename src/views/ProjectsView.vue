@@ -2,8 +2,11 @@
   <main class="projects-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Our <span class="tyrian-text">Projects</span></h1>
-        <p>Successful software development projects and case studies</p>
+        <h1>
+          {{ t('projects.title') }}
+          <span class="tyrian-text">{{ t('projects.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('projects.subtitle') }}</p>
       </div>
     </section>
 
@@ -32,7 +35,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from '../composables/useI18n'
 
 interface Project {
   id: string
@@ -42,26 +46,28 @@ interface Project {
   tags: string[]
 }
 
-const projects = ref<Project[]>([
+const { t } = useI18n()
+
+const projects = computed<Project[]>(() => [
   {
     id: 'legacy-rescue',
     icon: 'fa-life-ring',
-    title: 'Legacy System Rescue',
-    description: 'Modernized a 15-year-old enterprise application with zero downtime.',
+    title: t('project1.title'),
+    description: t('project1.desc'),
     tags: ['TypeScript', 'Vue.js', 'Node.js'],
   },
   {
     id: 'automation-pipeline',
     icon: 'fa-cogs',
-    title: 'Automation Pipeline',
-    description: 'Built an end-to-end CI/CD pipeline reducing deployment time by 80%.',
+    title: t('project2.title'),
+    description: t('project2.desc'),
     tags: ['Docker', 'GitHub Actions', 'AWS'],
   },
   {
     id: 'ai-integration',
     icon: 'fa-brain',
-    title: 'AI Integration Platform',
-    description: 'Developed a custom AI-powered analytics dashboard for real-time insights.',
+    title: t('project3.title'),
+    description: t('project3.desc'),
     tags: ['Python', 'TensorFlow', 'Vue.js'],
   },
 ])
@@ -115,7 +121,7 @@ const projects = ref<Project[]>([
 }
 
 .tag {
-  background: rgba(102, 2, 60, 0.15);
+  background: rgba(155, 27, 109, 0.15);
   color: var(--tyrian-light);
   padding: 4px 12px;
   border-radius: 20px;

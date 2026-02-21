@@ -3,16 +3,26 @@
     <section class="not-found-section">
       <div class="container text-center">
         <h1>4<span class="tyrian-text">0</span>4</h1>
-        <h2>Page Not Found</h2>
-        <p>The page you're looking for may have been moved or doesn't exist.</p>
+        <h2>{{ t('notFound.subtitle') }}</h2>
+        <p>{{ t('notFound.desc') }}</p>
         <div class="not-found-actions mt-4">
-          <router-link to="/" class="btn"> <i class="fas fa-home"></i> Back to Home </router-link>
-          <router-link to="/contact" class="btn btn-outline"> Talk To Us </router-link>
+          <router-link to="/" class="btn">
+            <i class="fas fa-home"></i> {{ t('notFound.home') }}
+          </router-link>
+          <router-link to="/contact" class="btn btn-outline">
+            {{ t('notFound.contact') }}
+          </router-link>
         </div>
       </div>
     </section>
   </main>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
+</script>
 
 <style scoped>
 .not-found-section {

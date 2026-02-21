@@ -12,8 +12,18 @@
           </li>
         </ul>
 
-        <div class="mobile-toggle" @click="toggleMenu">
-          <i :class="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+        <div class="nav-actions">
+          <button
+            class="lang-toggle"
+            @click="toggleLocale"
+            :title="locale === 'en' ? 'Αλλαγή σε Ελληνικά' : 'Switch to English'"
+          >
+            <span class="flag-icon">{{ locale === 'en' ? '🇬🇷' : '🇬🇧' }}</span>
+            <span class="lang-label">{{ locale === 'en' ? 'GR' : 'EN' }}</span>
+          </button>
+          <div class="mobile-toggle" @click="toggleMenu">
+            <i :class="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+          </div>
         </div>
       </nav>
     </div>
@@ -21,17 +31,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import type { NavItem } from '../types'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from '../composables/useI18n'
 
-// Navigation items with TypeScript type safety
-const navItems: NavItem[] = [
-  { path: '/', name: 'Home' },
-  { path: '/services', name: 'Services' },
-  { path: '/about', name: 'About' },
-  { path: '/projects', name: 'Projects' },
-  { path: '/contact', name: 'Contact' },
-]
+const { t, locale, toggleLocale } = useI18n()
+
+// Navigation items — reactive to locale changes
+const navItems = computed(() => [
+  { path: '/', name: t('nav.home') },
+  { path: '/services', name: t('nav.services') },
+  { path: '/about', name: t('nav.about') },
+  { path: '/projects', name: t('nav.projects') },
+  { path: '/contact', name: t('nav.contact') },
+])
 
 // State with TypeScript inference
 const isScrolled = ref<boolean>(false)
@@ -140,6 +152,43 @@ header.scrolled {
   color: var(--tyrian-purple);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(155, 27, 109, 0.15);
+  border: 1px solid var(--tyrian-purple);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lang-toggle:hover {
+  background: var(--tyrian-purple);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px var(--tyrian-glow);
+}
+
+.flag-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.lang-label {
+  letter-spacing: 1px;
+}
+
 @media (max-width: 768px) {
   .mobile-toggle {
     display: block;
@@ -167,6 +216,14 @@ header.scrolled {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+  }
+
+  .lang-label {
+    display: none;
+  }
+
+  .lang-toggle {
+    padding: 5px 10px;
   }
 }
 </style>

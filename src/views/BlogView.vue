@@ -2,15 +2,17 @@
   <main class="blog-page">
     <section class="page-hero">
       <div class="container">
-        <h1>Our <span class="tyrian-text">Blog</span></h1>
-        <p>Latest insights on software development and automation</p>
+        <h1>
+          {{ t('blog.title') }} <span class="tyrian-text">{{ t('blog.titleHighlight') }}</span>
+        </h1>
+        <p>{{ t('blog.subtitle') }}</p>
       </div>
     </section>
 
     <section class="blog-section">
       <div class="container">
         <div class="blog-categories mb-5">
-          <router-link to="/blog" class="btn btn-sm">All</router-link>
+          <router-link to="/blog" class="btn btn-sm">{{ t('blog.all') }}</router-link>
           <router-link
             v-for="cat in categories"
             :key="cat"
@@ -31,7 +33,9 @@
             <span class="blog-date">{{ post.date }}</span>
             <h3>{{ post.title }}</h3>
             <p>{{ post.excerpt }}</p>
-            <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+            <span class="read-more"
+              >{{ t('blog.readMore') }} <i class="fas fa-arrow-right"></i
+            ></span>
           </router-link>
         </div>
       </div>
@@ -40,27 +44,35 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from '../composables/useI18n'
 
-const categories = ref(['Development', 'Automation', 'AI', 'DevOps'])
+const { t } = useI18n()
 
-const posts = ref([
+const categories = computed(() => [
+  t('blog.development'),
+  t('blog.automation'),
+  t('blog.ai'),
+  t('blog.devops'),
+])
+
+const posts = computed(() => [
   {
     slug: 'modernizing-legacy-code',
-    title: 'Modernizing Legacy Code: A Practical Guide',
-    excerpt: 'Learn how to transform outdated codebases into modern, maintainable software.',
+    title: t('blog1.title'),
+    excerpt: t('blog1.excerpt'),
     date: 'Jan 15, 2026',
   },
   {
     slug: 'automation-best-practices',
-    title: 'Automation Best Practices for 2026',
-    excerpt: 'Discover the latest automation strategies to streamline your workflows.',
+    title: t('blog2.title'),
+    excerpt: t('blog2.excerpt'),
     date: 'Jan 10, 2026',
   },
   {
     slug: 'ai-powered-development',
-    title: 'AI-Powered Development: The Future is Here',
-    excerpt: 'How AI is transforming the software development landscape.',
+    title: t('blog3.title'),
+    excerpt: t('blog3.excerpt'),
     date: 'Jan 5, 2026',
   },
 ])
