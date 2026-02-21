@@ -38,6 +38,11 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--black);
+  background-image: url('/erevos.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--text-light);
   line-height: 1.6;
   overflow-x: hidden;
