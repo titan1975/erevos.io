@@ -1,0 +1,16 @@
+# Erevos.io Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://erevos.io/sitemap.xml
+
+# Disallow utility pages
+Disallow: /maintenance
+
+# Allow all crawlers to index everything else
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

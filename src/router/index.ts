@@ -76,8 +76,9 @@ const routes: RouteRecordRaw[] = [
     name: 'home',
     component: HomeView,
     meta: {
-      title: 'Home',
-      description: 'Erevos.io - Innovative Software Solutions',
+      title: 'Code Fixing, Automation & Technical Consulting',
+      description:
+        'Erevos.io fixes broken code, automates your workflows, and solves tough technical problems. No BS, just solid engineering. Get a free consultation.',
       requiresAuth: false,
       layout: 'default',
     },
@@ -89,8 +90,9 @@ const routes: RouteRecordRaw[] = [
     name: 'services',
     component: ServicesView,
     meta: {
-      title: 'Services',
-      description: 'Software development, code fixing, and automation services',
+      title: 'Services - Code Fixing, Automation & Consulting',
+      description:
+        'We fix broken code, automate repetitive processes, rescue legacy systems, build APIs, and provide honest tech consulting. See how we can help.',
       requiresAuth: false,
       layout: 'default',
     },
@@ -101,7 +103,7 @@ const routes: RouteRecordRaw[] = [
     component: ServiceDetailView,
     meta: {
       title: 'Service Details',
-      description: 'Detailed information about our services',
+      description: 'Learn more about this Erevos.io service and how we can help your project.',
       requiresAuth: false,
       layout: 'default',
     },
@@ -114,8 +116,9 @@ const routes: RouteRecordRaw[] = [
     name: 'about',
     component: AboutView,
     meta: {
-      title: 'About Us',
-      description: 'Learn about Erevos.io and our mission',
+      title: 'About Us - The Team Behind Erevos.io',
+      description:
+        "We're a small team of engineers who fix code, automate workflows, and solve hard technical problems. No corporate fluff — just real work.",
       requiresAuth: false,
       layout: 'default',
     },
@@ -125,8 +128,8 @@ const routes: RouteRecordRaw[] = [
     name: 'team',
     component: TeamView,
     meta: {
-      title: 'Our Team',
-      description: 'Meet the experts behind Erevos.io',
+      title: 'Our Team - Engineers Who Get Things Done',
+      description: 'Meet the people behind Erevos.io. Real engineers solving real problems.',
       requiresAuth: false,
       layout: 'default',
     },
@@ -136,8 +139,9 @@ const routes: RouteRecordRaw[] = [
     name: 'careers',
     component: CareersView,
     meta: {
-      title: 'Careers',
-      description: 'Join the Erevos.io team',
+      title: 'Careers - Join the Erevos.io Team',
+      description:
+        'Looking for talented developers and engineers. Work on real projects, no bureaucracy.',
       requiresAuth: false,
       layout: 'default',
     },
@@ -149,8 +153,9 @@ const routes: RouteRecordRaw[] = [
     name: 'projects',
     component: ProjectsView,
     meta: {
-      title: 'Projects',
-      description: 'Our successful software development projects',
+      title: "Projects - Real Work We've Done",
+      description:
+        "Check out our software development projects. Code fixes, automation builds, and system rescues we've shipped.",
       requiresAuth: false,
       layout: 'default',
     },
@@ -160,8 +165,8 @@ const routes: RouteRecordRaw[] = [
     name: 'project-detail',
     component: ProjectDetailView,
     meta: {
-      title: 'Project Details',
-      description: 'Detailed case study of our projects',
+      title: 'Project Case Study',
+      description: 'See how we tackled this project and the results we delivered.',
       requiresAuth: false,
       layout: 'default',
     },
@@ -174,8 +179,9 @@ const routes: RouteRecordRaw[] = [
     name: 'contact',
     component: ContactView,
     meta: {
-      title: "Let's Talk",
-      description: "Got a project or a problem? Let's chat.",
+      title: "Let's Talk - Get a Free Consultation",
+      description:
+        "Got a broken codebase or a project idea? Drop us a line. We'll give you honest feedback — no sales pitch.",
       requiresAuth: false,
       layout: 'default',
     },
@@ -187,8 +193,9 @@ const routes: RouteRecordRaw[] = [
     name: 'blog',
     component: BlogView,
     meta: {
-      title: 'Blog',
-      description: 'Latest insights on software development and automation',
+      title: 'Blog - Software Engineering Insights',
+      description:
+        'Practical tips on code fixing, automation, and software engineering. No fluff, just useful stuff.',
       requiresAuth: false,
       layout: 'blog',
     },
@@ -224,8 +231,9 @@ const routes: RouteRecordRaw[] = [
     name: 'faq',
     component: FAQView,
     meta: {
-      title: 'FAQ',
-      description: 'Frequently asked questions',
+      title: 'FAQ - Common Questions Answered',
+      description:
+        'Got questions about how we work, what we charge, or how to get started? Here are straight answers.',
       requiresAuth: false,
       layout: 'default',
     },
@@ -235,8 +243,9 @@ const routes: RouteRecordRaw[] = [
     name: 'pricing',
     component: PricingView,
     meta: {
-      title: 'Pricing',
-      description: 'Our service pricing plans',
+      title: 'Pricing - Transparent Plans, No Hidden Fees',
+      description:
+        'See what our services cost. Starter, Professional, and Enterprise plans. Straight up pricing.',
       requiresAuth: false,
       layout: 'default',
     },
@@ -337,31 +346,69 @@ declare module 'vue-router' {
 
 // === NAVIGATION GUARDS ===
 
-// 1. Title and Meta Tags Guard
+// Helper: set or create meta tag
+function setMeta(attr: string, key: string, content: string): void {
+  let el = document.querySelector(`meta[${attr}="${key}"]`)
+  if (!el) {
+    el = document.createElement('meta')
+    el.setAttribute(attr, key)
+    document.head.appendChild(el)
+  }
+  el.setAttribute('content', content)
+}
+
+// Helper: set or create link tag
+function setLink(rel: string, href: string): void {
+  let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null
+  if (!el) {
+    el = document.createElement('link')
+    el.setAttribute('rel', rel)
+    document.head.appendChild(el)
+  }
+  el.setAttribute('href', href)
+}
+
+// 1. Title, Meta, OG Tags & Canonical URL Guard
 router.beforeEach((to, _from, next) => {
-  // Set page title
   const title = to.meta.title as string
   const baseTitle = 'Erevos.io'
+  const baseUrl = 'https://erevos.io'
+  const fullTitle = title ? `${title} | ${baseTitle}` : baseTitle
 
-  if (title) {
-    document.title = `${title} | ${baseTitle}`
-  } else {
-    document.title = baseTitle
-  }
+  // Page title
+  document.title = fullTitle
 
-  // Set meta description
+  // Meta description
   const description =
     (to.meta.description as string) ||
-    'Innovative software solutions - We fix broken code, automate processes, and solve technical problems'
-  let metaDescription = document.querySelector('meta[name="description"]')
+    'Erevos.io fixes broken code, automates workflows, and solves tough technical problems. No BS, just solid engineering.'
+  setMeta('name', 'description', description)
 
-  if (!metaDescription) {
-    metaDescription = document.createElement('meta')
-    metaDescription.setAttribute('name', 'description')
-    document.head.appendChild(metaDescription)
+  // Canonical URL
+  const canonicalUrl = `${baseUrl}${to.path === '/' ? '' : to.path}`
+  setLink('canonical', canonicalUrl)
+
+  // Open Graph tags
+  setMeta('property', 'og:title', fullTitle)
+  setMeta('property', 'og:description', description)
+  setMeta('property', 'og:url', canonicalUrl)
+  setMeta('property', 'og:type', 'website')
+  setMeta('property', 'og:site_name', 'Erevos.io')
+  setMeta('property', 'og:image', `${baseUrl}/og-image.png`)
+
+  // Twitter Card tags
+  setMeta('name', 'twitter:card', 'summary_large_image')
+  setMeta('name', 'twitter:title', fullTitle)
+  setMeta('name', 'twitter:description', description)
+  setMeta('name', 'twitter:image', `${baseUrl}/og-image.png`)
+
+  // Robots
+  const noIndex = ['not-found', 'maintenance']
+  if (noIndex.includes(to.name as string)) {
+    setMeta('name', 'robots', 'noindex, nofollow')
+  } else {
+    setMeta('name', 'robots', 'index, follow')
   }
-
-  metaDescription.setAttribute('content', description)
 
   next()
 })
