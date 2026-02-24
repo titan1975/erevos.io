@@ -7,11 +7,11 @@ const en: Record<string, string> = {
   'nav.contact': 'Contact',
 
   // ── Hero ──
-  'hero.badge': 'No fluff. No drama. Just code that works.',
-  'hero.title1': 'Your Code Is',
-  'hero.titleHighlight1': 'A Mess',
-  'hero.title2': "Let's",
-  'hero.titleHighlight2': 'Sort It Out',
+  'hero.badge': 'No fluff. No drama. Just solutions that work.',
+  'hero.title1': "We Don't Just Write",
+  'hero.titleHighlight1': 'Code',
+  'hero.title2': 'We Solve',
+  'hero.titleHighlight2': 'Problems',
   'hero.subtitle':
     "Look, we get it — stuff breaks, deadlines pile up, and that legacy codebase nobody wants to touch keeps getting worse. We're the team you call when you need someone to actually roll up their sleeves and get it done. No corporate jargon, just real work.",
   'hero.btnTalk': "Let's Talk",

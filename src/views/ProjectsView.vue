@@ -121,7 +121,7 @@ const projects = computed<Project[]>(() => [
 }
 
 .tag {
-  background: rgba(155, 27, 109, 0.15);
+  background: rgba(191, 45, 138, 0.15);
   color: var(--tyrian-light);
   padding: 4px 12px;
   border-radius: 20px;

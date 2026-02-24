@@ -80,15 +80,15 @@ header {
   width: 100%;
   z-index: 1000;
   padding: 20px 0;
-  background-color: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #2a2a2a;
+  background-color: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(191, 45, 138, 0.25);
   transition: all 0.3s ease;
 }
 
 header.scrolled {
   padding: 15px 0;
-  background-color: var(--black-darker);
+  background-color: rgba(10, 10, 10, 0.85);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -163,7 +163,7 @@ header.scrolled {
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: rgba(155, 27, 109, 0.15);
+  background: rgba(191, 45, 138, 0.15);
   border: 1px solid var(--tyrian-purple);
   border-radius: 20px;
   cursor: pointer;

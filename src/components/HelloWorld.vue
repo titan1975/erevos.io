@@ -14,7 +14,7 @@
             </div>
             <h1 class="animate-fade-in delay-1">
               {{ t('hero.title1') }} <span class="tyrian-text">{{ t('hero.titleHighlight1') }}</span
-              >? <br />{{ t('hero.title2') }}
+              >... <br />{{ t('hero.title2') }}
               <span class="tyrian-text">{{ t('hero.titleHighlight2') }}</span
               >.
             </h1>
@@ -290,7 +290,7 @@ const particleStyle = (n: number) => ({
    HERO
    ═══════════════════════════════════════ */
 .hero {
-  padding: 160px 0 100px;
+  padding: 200px 0 100px;
   position: relative;
   overflow: hidden;
   min-height: 100vh;
@@ -341,7 +341,7 @@ const particleStyle = (n: number) => ({
   align-items: center;
   gap: 10px;
   padding: 8px 20px;
-  background: rgba(155, 27, 109, 0.15);
+  background: rgba(191, 45, 138, 0.15);
   border: 1px solid var(--tyrian-purple);
   border-radius: 30px;
   font-size: 13px;
@@ -430,7 +430,7 @@ const particleStyle = (n: number) => ({
   cursor: pointer;
   box-shadow:
     0 4px 20px var(--tyrian-glow),
-    0 0 40px rgba(155, 27, 109, 0.15);
+    0 0 40px rgba(191, 45, 138, 0.15);
   font-family: 'Inter', sans-serif;
 }
 
@@ -438,7 +438,7 @@ const particleStyle = (n: number) => ({
   transform: translateY(-3px);
   box-shadow:
     0 8px 30px var(--tyrian-glow),
-    0 0 60px rgba(155, 27, 109, 0.25);
+    0 0 60px rgba(191, 45, 138, 0.25);
   background: linear-gradient(135deg, var(--tyrian-light), var(--tyrian-purple));
 }
 
@@ -610,7 +610,7 @@ const particleStyle = (n: number) => ({
 .section-tag {
   display: inline-block;
   padding: 6px 16px;
-  background: rgba(155, 27, 109, 0.15);
+  background: rgba(191, 45, 138, 0.15);
   border: 1px solid var(--tyrian-dark);
   border-radius: 20px;
   font-size: 12px;
@@ -817,7 +817,7 @@ const particleStyle = (n: number) => ({
   justify-content: center;
   box-shadow:
     0 0 60px var(--tyrian-glow),
-    0 0 120px rgba(155, 27, 109, 0.15);
+    0 0 120px rgba(191, 45, 138, 0.15);
   animation: pulsate 4s ease-in-out infinite;
   z-index: 1;
 }
@@ -834,7 +834,7 @@ const particleStyle = (n: number) => ({
   50% {
     box-shadow:
       0 0 80px var(--tyrian-glow),
-      0 0 120px rgba(155, 27, 109, 0.2);
+      0 0 120px rgba(191, 45, 138, 0.2);
   }
 }
 
@@ -842,7 +842,7 @@ const particleStyle = (n: number) => ({
   position: absolute;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(155, 27, 109, 0.2), transparent 70%);
+  background: radial-gradient(circle, rgba(191, 45, 138, 0.2), transparent 70%);
   border-radius: 50%;
   z-index: 0;
 }
@@ -875,7 +875,7 @@ const particleStyle = (n: number) => ({
 .cap-icon {
   width: 40px;
   height: 40px;
-  background: rgba(155, 27, 109, 0.2);
+  background: rgba(191, 45, 138, 0.2);
   border: 1px solid var(--tyrian-dark);
   border-radius: 10px;
   display: flex;
@@ -1012,7 +1012,7 @@ const particleStyle = (n: number) => ({
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(155, 27, 109, 0.1), transparent 50%);
+  background: radial-gradient(circle at center, rgba(191, 45, 138, 0.1), transparent 50%);
   animation: rotateBg 20s linear infinite;
 }
 
@@ -1123,7 +1123,7 @@ const particleStyle = (n: number) => ({
 
 @media (max-width: 768px) {
   .hero {
-    padding: 120px 0 60px;
+    padding: 140px 0 60px;
     min-height: auto;
   }
   .hero h1 {

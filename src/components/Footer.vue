@@ -272,7 +272,7 @@ footer::after {
 .social-icon {
   width: 40px;
   height: 40px;
-  background: rgba(155, 27, 109, 0.1);
+  background: rgba(191, 45, 138, 0.1);
   border: 1px solid var(--tyrian-purple);
   border-radius: 50%;
   display: flex;
@@ -380,7 +380,7 @@ footer::after {
 /* Footer Bottom */
 .footer-bottom {
   padding: 25px 0;
-  border-top: 1px solid rgba(155, 27, 109, 0.3);
+  border-top: 1px solid rgba(191, 45, 138, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;

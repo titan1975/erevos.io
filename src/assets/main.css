@@ -5,10 +5,10 @@
   --black-lighter: #1e1e1e;
 
   /* Tyrian Purple Theme */
-  --tyrian-purple: #9b1b6d;
-  --tyrian-light: #c44b8f;
-  --tyrian-dark: #6e0848;
-  --tyrian-glow: rgba(155, 27, 109, 0.3);
+  --tyrian-purple: #bf2d8a;
+  --tyrian-light: #e056a8;
+  --tyrian-dark: #8a1065;
+  --tyrian-glow: rgba(191, 45, 138, 0.35);
 
   /* Text Colors */
   --text-light: #f5f5f7;
@@ -95,7 +95,7 @@ h5 {
 }
 
 .btn-outline:hover {
-  background: rgba(155, 27, 109, 0.1);
+  background: rgba(191, 45, 138, 0.1);
   color: var(--tyrian-light);
   border-color: var(--tyrian-light);
   transform: translateY(-2px);
