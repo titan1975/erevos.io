@@ -61,7 +61,7 @@ const handleSend = async () => {
 
 <style scoped>
 .page-hero {
-  padding: 160px 0 40px;
+  padding: 60px 0 40px;
   text-align: center;
 }
 

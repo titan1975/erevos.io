@@ -290,7 +290,7 @@ const particleStyle = (n: number) => ({
    HERO
    ═══════════════════════════════════════ */
 .hero {
-  padding: 200px 0 100px;
+  padding: 80px 0 100px;
   position: relative;
   overflow: hidden;
   min-height: 100vh;

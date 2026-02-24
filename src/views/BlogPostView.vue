@@ -38,7 +38,7 @@ const postTitle = computed(() => {
 
 <style scoped>
 .page-hero {
-  padding: 160px 0 60px;
+  padding: 60px 0 60px;
   text-align: center;
 }
 

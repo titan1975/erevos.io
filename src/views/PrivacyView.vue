@@ -43,7 +43,7 @@ const { t } = useI18n()
 
 <style scoped>
 .page-hero {
-  padding: 160px 0 80px;
+  padding: 60px 0 80px;
   text-align: center;
 }
 

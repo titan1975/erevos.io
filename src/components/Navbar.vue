@@ -74,7 +74,7 @@ onUnmounted((): void => {
 
 <style scoped>
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -195,8 +195,8 @@ header.scrolled {
   }
 
   .nav-links {
-    position: fixed;
-    top: 80px;
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: var(--black-darker);
