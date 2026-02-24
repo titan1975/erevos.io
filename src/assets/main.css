@@ -40,7 +40,7 @@ body {
   background-color: var(--black);
   background-image: url('/erevos.png');
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center calc(50% + 400px);
   background-size: cover;
   background-attachment: fixed;
   color: var(--text-light);
