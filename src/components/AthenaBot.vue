@@ -129,8 +129,14 @@ const sendMessage = async (): Promise<void> => {
   isThinking.value = true
 
   try {
+    const apiUrl =
+      (import.meta.env.VITE_DEEPSEEK_API_URL as string) ||
+      'https://api.deepseek.com/v1/chat/completions'
+    const apiKey =
+      (import.meta.env.VITE_DEEPSEEK_API_KEY as string) || 'sk-f681de64cc6944b0af4a5ad0debed556'
+
     const response = await axios.post(
-      import.meta.env.VITE_DEEPSEEK_API_URL as string,
+      apiUrl,
       {
         model: 'deepseek-chat',
         messages: [
@@ -148,7 +154,7 @@ const sendMessage = async (): Promise<void> => {
       },
       {
         headers: {
-          Authorization: `Bearer ${import.meta.env.VITE_DEEPSEEK_API_KEY}`,
+          Authorization: `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
         },
       },
@@ -165,7 +171,7 @@ const sendMessage = async (): Promise<void> => {
     messages.value.push({
       role: 'assistant',
       content:
-        '🦉 Forgive me, I seem to be having trouble reaching Olympus. Please try again or email us at hello@erevos.io',
+        '🦉 Forgive me, I seem to be having trouble reaching Olympus. Please try again or email us at info@erevos.io',
       timestamp: new Date(),
     })
   } finally {

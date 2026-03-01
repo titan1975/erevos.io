@@ -33,8 +33,12 @@ export function useAthena() {
     error.value = null
 
     try {
+      const apiUrl =
+        import.meta.env.VITE_DEEPSEEK_API_URL || 'https://api.deepseek.com/v1/chat/completions'
+      const apiKey = import.meta.env.VITE_DEEPSEEK_API_KEY || 'sk-f681de64cc6944b0af4a5ad0debed556'
+
       const response = await axios.post<DeepSeekResponse>(
-        import.meta.env.VITE_DEEPSEEK_API_URL,
+        apiUrl,
         {
           model: 'deepseek-chat',
           messages: [
@@ -64,7 +68,7 @@ export function useAthena() {
         },
         {
           headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_DEEPSEEK_API_KEY}`,
+            Authorization: `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
           },
         },
@@ -86,7 +90,7 @@ export function useAthena() {
       messages.value.push({
         role: 'assistant',
         content:
-          '🦉 Forgive me, I seem to be having trouble reaching Olympus. Please try again or email us at hello@erevos.io',
+          '🦉 Forgive me, I seem to be having trouble reaching Olympus. Please try again or email us at info@erevos.io',
         timestamp: new Date(),
       })
     } finally {
