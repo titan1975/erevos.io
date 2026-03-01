@@ -30,6 +30,9 @@ const BlogPostView = () => import('../views/BlogPostView.vue')
 const BlogCategoryView = () => import('../views/BlogCategoryView.vue')
 const ContentStudioView = () => import('../views/ContentStudioView.vue')
 
+// Athena Chat
+const AthenaChatView = () => import('../views/AthenaChatView.vue')
+
 // Legal
 const PrivacyView = () => import('../views/PrivacyView.vue')
 const TermsView = () => import('../views/TermsView.vue')
@@ -58,6 +61,7 @@ export type RouteNames =
   | 'projects'
   | 'project-detail'
   | 'contact'
+  | 'athena'
   | 'blog'
   | 'blog-post'
   | 'blog-category'
@@ -184,6 +188,20 @@ const routes: RouteRecordRaw[] = [
       title: "Let's Talk - Get a Free Consultation",
       description:
         "Got a broken codebase or a project idea? Drop us a line. We'll give you honest feedback — no sales pitch.",
+      requiresAuth: false,
+      layout: 'default',
+    },
+  },
+
+  // === ATHENA AI CHAT ===
+  {
+    path: '/athena',
+    name: 'athena',
+    component: AthenaChatView,
+    meta: {
+      title: 'Chat with Athena - AI Assistant',
+      description:
+        'Ask Athena, our AI assistant, about code, automation, or any technical questions.',
       requiresAuth: false,
       layout: 'default',
     },
