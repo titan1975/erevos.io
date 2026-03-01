@@ -125,65 +125,15 @@
         </div>
       </div>
     </section>
-
-    <!-- Messages Section -->
-    <section class="studio-section">
-      <div class="container">
-        <div class="card messages-card">
-          <div class="messages-header">
-            <h3>
-              Contact Messages
-              <span v-if="unreadCount" class="badge">{{ unreadCount }} new</span>
-            </h3>
-            <div class="messages-actions" v-if="allMessages.length">
-              <button class="btn btn-sm" @click="markAllAsRead">Mark all read</button>
-              <button class="btn btn-sm btn-outline" @click="clearAllMessages">Clear all</button>
-            </div>
-          </div>
-          <ul class="message-list" v-if="allMessages.length">
-            <li
-              v-for="msg in allMessages"
-              :key="msg.id"
-              :class="{ unread: !msg.read }"
-              @click="markAsRead(msg.id)"
-            >
-              <div class="msg-top">
-                <strong>{{ msg.name }}</strong>
-                <span class="msg-email">{{ msg.email }}</span>
-                <span class="msg-date">{{ formatDate(msg.createdAt) }}</span>
-              </div>
-              <div class="msg-subject">{{ msg.subject }}</div>
-              <div class="msg-service" v-if="msg.service && msg.service !== 'Not specified'">
-                Service: {{ msg.service }}
-              </div>
-              <div class="msg-body">{{ msg.message }}</div>
-              <div class="msg-actions">
-                <a :href="`mailto:${msg.email}?subject=Re: ${msg.subject}`" class="btn btn-sm"
-                  >Reply</a
-                >
-                <button class="btn btn-sm btn-outline" @click.stop="removeMessage(msg.id)">
-                  Delete
-                </button>
-              </div>
-            </li>
-          </ul>
-          <p v-else class="empty">No messages yet.</p>
-        </div>
-      </div>
-    </section>
   </main>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useContentStudio } from '../composables/useContentStudio'
-import { useMessages } from '../composables/useMessages'
 
 const { allArticles, allVideos, addArticle, removeArticle, addVideoLink, removeVideo } =
   useContentStudio()
-
-const { allMessages, unreadCount, markAsRead, markAllAsRead, removeMessage, clearAllMessages } =
-  useMessages()
 
 const articleSaved = ref(false)
 const videoSaved = ref(false)
@@ -200,17 +150,6 @@ const videoForm = ref({
   title: '',
   youtubeUrl: '',
 })
-
-const formatDate = (dateStr: string): string => {
-  const d = new Date(dateStr)
-  return d.toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  })
-}
 
 const resetArticleForm = (): void => {
   articleForm.value = {

@@ -1,6 +1,7 @@
 import { ref, reactive } from 'vue'
 import type { ContactForm, ContactFormErrors } from '../types'
-import { useMessages } from './useMessages'
+
+const WEB3FORMS_ACCESS_KEY = 'd3e0ff2a-4c08-43cd-b465-6b677e050986'
 
 export function useContactForm() {
   const formData = reactive<ContactForm>({
@@ -55,8 +56,6 @@ export function useContactForm() {
     return isValid
   }
 
-  const { addMessage } = useMessages()
-
   const submitForm = async (): Promise<void> => {
     if (!validateForm()) return
 
@@ -65,25 +64,37 @@ export function useContactForm() {
     submitMessage.value = ''
 
     try {
-      // Store message locally
-      addMessage({
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        service: formData.service,
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          service: formData.service || 'Not specified',
+        }),
       })
 
-      submitStatus.value = 'success'
-      submitMessage.value = 'Thank you! We received your message and will get back to you soon.'
+      const result = await response.json()
 
-      // Reset form
-      formData.name = ''
-      formData.email = ''
-      formData.subject = ''
-      formData.message = ''
-      formData.service = ''
-      formData.codeSnippet = ''
+      if (result.success) {
+        submitStatus.value = 'success'
+        submitMessage.value = 'Thank you! We received your message and will get back to you soon.'
+
+        // Reset form
+        formData.name = ''
+        formData.email = ''
+        formData.subject = ''
+        formData.message = ''
+        formData.service = ''
+        formData.codeSnippet = ''
+      } else {
+        throw new Error(result.message || 'Submission failed')
+      }
     } catch (error: any) {
       submitStatus.value = 'error'
       submitMessage.value = 'Something went wrong. Please try again.'
