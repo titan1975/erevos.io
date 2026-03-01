@@ -60,6 +60,10 @@
               <i class="fas fa-envelope"></i>
               <a :href="`mailto:${contact.email}`">{{ contact.email }}</a>
             </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <a :href="`tel:${contact.mobile.replace(/\s/g, '')}`">{{ contact.mobile }}</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -111,6 +115,7 @@ interface FooterLink {
 
 interface ContactInfo {
   email: string
+  mobile: string
 }
 
 // State
@@ -144,7 +149,8 @@ const services = computed<FooterLink[]>(() => [
 ])
 
 const contact = ref<ContactInfo>({
-  email: 'hello@erevos.io',
+  email: 'info@erevos.io',
+  mobile: '+30 698 237 2550',
 })
 
 // Methods

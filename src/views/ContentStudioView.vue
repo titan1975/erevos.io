@@ -125,15 +125,65 @@
         </div>
       </div>
     </section>
+
+    <!-- Messages Section -->
+    <section class="studio-section">
+      <div class="container">
+        <div class="card messages-card">
+          <div class="messages-header">
+            <h3>
+              Contact Messages
+              <span v-if="unreadCount" class="badge">{{ unreadCount }} new</span>
+            </h3>
+            <div class="messages-actions" v-if="allMessages.length">
+              <button class="btn btn-sm" @click="markAllAsRead">Mark all read</button>
+              <button class="btn btn-sm btn-outline" @click="clearAllMessages">Clear all</button>
+            </div>
+          </div>
+          <ul class="message-list" v-if="allMessages.length">
+            <li
+              v-for="msg in allMessages"
+              :key="msg.id"
+              :class="{ unread: !msg.read }"
+              @click="markAsRead(msg.id)"
+            >
+              <div class="msg-top">
+                <strong>{{ msg.name }}</strong>
+                <span class="msg-email">{{ msg.email }}</span>
+                <span class="msg-date">{{ formatDate(msg.createdAt) }}</span>
+              </div>
+              <div class="msg-subject">{{ msg.subject }}</div>
+              <div class="msg-service" v-if="msg.service && msg.service !== 'Not specified'">
+                Service: {{ msg.service }}
+              </div>
+              <div class="msg-body">{{ msg.message }}</div>
+              <div class="msg-actions">
+                <a :href="`mailto:${msg.email}?subject=Re: ${msg.subject}`" class="btn btn-sm"
+                  >Reply</a
+                >
+                <button class="btn btn-sm btn-outline" @click.stop="removeMessage(msg.id)">
+                  Delete
+                </button>
+              </div>
+            </li>
+          </ul>
+          <p v-else class="empty">No messages yet.</p>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useContentStudio } from '../composables/useContentStudio'
+import { useMessages } from '../composables/useMessages'
 
 const { allArticles, allVideos, addArticle, removeArticle, addVideoLink, removeVideo } =
   useContentStudio()
+
+const { allMessages, unreadCount, markAsRead, markAllAsRead, removeMessage, clearAllMessages } =
+  useMessages()
 
 const articleSaved = ref(false)
 const videoSaved = ref(false)
@@ -150,6 +200,17 @@ const videoForm = ref({
   title: '',
   youtubeUrl: '',
 })
+
+const formatDate = (dateStr: string): string => {
+  const d = new Date(dateStr)
+  return d.toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+}
 
 const resetArticleForm = (): void => {
   articleForm.value = {
@@ -262,9 +323,121 @@ const handleAddVideo = (): void => {
   color: var(--text-gray);
 }
 
+/* Messages styles */
+.messages-card {
+  max-width: 100%;
+}
+
+.messages-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.messages-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  background: var(--tyrian-purple);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.messages-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.message-list {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message-list li {
+  background: var(--black-lighter);
+  border: 1px solid rgba(191, 45, 138, 0.25);
+  padding: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.message-list li:hover {
+  border-color: var(--tyrian-purple);
+}
+
+.message-list li.unread {
+  border-left: 4px solid var(--tyrian-purple);
+  background: rgba(191, 45, 138, 0.08);
+}
+
+.msg-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.msg-email {
+  color: var(--tyrian-light);
+  font-size: 14px;
+}
+
+.msg-date {
+  color: var(--text-gray);
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.msg-subject {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.msg-service {
+  color: var(--text-gray);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.msg-body {
+  color: var(--text-light);
+  white-space: pre-wrap;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.msg-actions {
+  display: flex;
+  gap: 8px;
+}
+
 @media (max-width: 768px) {
   .item-list li {
     flex-direction: column;
+  }
+
+  .messages-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .msg-date {
+    margin-left: 0;
+    width: 100%;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 import { ref, reactive } from 'vue'
-import axios from 'axios'
 import type { ContactForm, ContactFormErrors } from '../types'
+import { useMessages } from './useMessages'
 
 export function useContactForm() {
   const formData = reactive<ContactForm>({
@@ -55,6 +55,8 @@ export function useContactForm() {
     return isValid
   }
 
+  const { addMessage } = useMessages()
+
   const submitForm = async (): Promise<void> => {
     if (!validateForm()) return
 
@@ -63,11 +65,17 @@ export function useContactForm() {
     submitMessage.value = ''
 
     try {
-      // Replace with your actual API endpoint
-      await axios.post('/api/contact', formData)
+      // Store message locally
+      addMessage({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        service: formData.service,
+      })
 
       submitStatus.value = 'success'
-      submitMessage.value = 'Thank you! Our team will get back to you soon.'
+      submitMessage.value = 'Thank you! We received your message and will get back to you soon.'
 
       // Reset form
       formData.name = ''
@@ -78,8 +86,7 @@ export function useContactForm() {
       formData.codeSnippet = ''
     } catch (error: any) {
       submitStatus.value = 'error'
-      submitMessage.value =
-        error.response?.data?.message || 'Something went wrong. Please try again.'
+      submitMessage.value = 'Something went wrong. Please try again.'
     } finally {
       isSubmitting.value = false
     }

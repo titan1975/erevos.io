@@ -94,7 +94,11 @@
             <ul class="contact-details">
               <li>
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:hello@erevos.io">hello@erevos.io</a>
+                <a href="mailto:info@erevos.io">info@erevos.io</a>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+306982372550">+30 698 237 2550</a>
               </li>
             </ul>
           </div>
