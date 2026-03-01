@@ -43,6 +43,7 @@ const navItems = computed(() => [
   { path: '/about', name: t('nav.about') },
   { path: '/projects', name: t('nav.projects') },
   { path: '/contact', name: t('nav.contact') },
+  { path: '/studio', name: t('nav.studio') },
 ])
 
 // State with TypeScript inference

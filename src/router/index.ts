@@ -28,6 +28,7 @@ const ProjectDetailView = () => import('../views/ProjectDetailView.vue')
 const BlogView = () => import('../views/BlogView.vue')
 const BlogPostView = () => import('../views/BlogPostView.vue')
 const BlogCategoryView = () => import('../views/BlogCategoryView.vue')
+const ContentStudioView = () => import('../views/ContentStudioView.vue')
 
 // Legal
 const PrivacyView = () => import('../views/PrivacyView.vue')
@@ -60,6 +61,7 @@ export type RouteNames =
   | 'blog'
   | 'blog-post'
   | 'blog-category'
+  | 'content-studio'
   | 'privacy'
   | 'terms'
   | 'cookies'
@@ -223,6 +225,17 @@ const routes: RouteRecordRaw[] = [
       layout: 'blog',
     },
     props: true,
+  },
+  {
+    path: '/studio',
+    name: 'content-studio',
+    component: ContentStudioView,
+    meta: {
+      title: 'Content Studio',
+      description: 'Add articles and YouTube video links for the site content.',
+      requiresAuth: false,
+      layout: 'default',
+    },
   },
 
   // === COMPANY INFO ===

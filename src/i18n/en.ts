@@ -5,6 +5,7 @@ const en: Record<string, string> = {
   'nav.about': 'About',
   'nav.projects': 'Projects',
   'nav.contact': 'Contact',
+  'nav.studio': 'Studio',
 
   // ── Hero ──
   'hero.badge': 'No fluff. No drama. Just solutions that work.',
@@ -13,7 +14,7 @@ const en: Record<string, string> = {
   'hero.title2': 'We Solve',
   'hero.titleHighlight2': 'Problems',
   'hero.subtitle':
-    "Look, we get it — stuff breaks, deadlines pile up, and that legacy codebase nobody wants to touch keeps getting worse. We're the team you call when you need someone to actually roll up their sleeves and get it done. No corporate jargon, just real work.",
+    'Our philosophy is simple: solve the real problem, not just the symptom. We dig into what’s actually blocking your team, fix it properly, and leave you with systems that stay reliable under pressure.',
   'hero.btnTalk': "Let's Talk",
   'hero.btnServices': 'What We Do',
   'hero.trust': 'Real devs & startups trust us with their code',

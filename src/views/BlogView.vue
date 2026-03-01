@@ -15,11 +15,11 @@
           <router-link to="/blog" class="btn btn-sm">{{ t('blog.all') }}</router-link>
           <router-link
             v-for="cat in categories"
-            :key="cat"
-            :to="`/blog/category/${cat.toLowerCase()}`"
+            :key="cat.slug"
+            :to="`/blog/category/${cat.slug}`"
             class="btn btn-sm btn-outline"
           >
-            {{ cat }}
+            {{ cat.label }}
           </router-link>
         </div>
 
@@ -38,6 +38,20 @@
             ></span>
           </router-link>
         </div>
+
+        <div class="videos-section" v-if="videos.length">
+          <div class="section-title">
+            <h2>YouTube <span>Videos</span></h2>
+          </div>
+          <div class="blog-grid grid-3">
+            <article v-for="video in videos" :key="video.id" class="card blog-card">
+              <h3>{{ video.title }}</h3>
+              <a :href="video.youtubeUrl" target="_blank" rel="noopener" class="read-more mt-2">
+                Open on YouTube <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -46,36 +60,73 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
+import { useContentStudio } from '../composables/useContentStudio'
 
 const { t } = useI18n()
+const { allArticles, allVideos, slugify } = useContentStudio()
 
-const categories = computed(() => [
-  t('blog.development'),
-  t('blog.automation'),
-  t('blog.ai'),
-  t('blog.devops'),
-])
-
-const posts = computed(() => [
+const defaultPosts = computed(() => [
   {
     slug: 'modernizing-legacy-code',
     title: t('blog1.title'),
     excerpt: t('blog1.excerpt'),
     date: 'Jan 15, 2026',
+    category: 'development',
   },
   {
     slug: 'automation-best-practices',
     title: t('blog2.title'),
     excerpt: t('blog2.excerpt'),
     date: 'Jan 10, 2026',
+    category: 'automation',
   },
   {
     slug: 'ai-powered-development',
     title: t('blog3.title'),
     excerpt: t('blog3.excerpt'),
     date: 'Jan 5, 2026',
+    category: 'ai',
   },
 ])
+
+const customPosts = computed(() =>
+  allArticles.value.map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    excerpt: article.excerpt,
+    date: new Date(article.createdAt).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: '2-digit',
+    }),
+    category: slugify(article.category || 'general'),
+  })),
+)
+
+const posts = computed(() => [...customPosts.value, ...defaultPosts.value])
+
+const categories = computed(() => {
+  const map = new Map<string, string>()
+
+  map.set('development', t('blog.development'))
+  map.set('automation', t('blog.automation'))
+  map.set('ai', t('blog.ai'))
+  map.set('devops', t('blog.devops'))
+
+  customPosts.value.forEach((post) => {
+    if (!map.has(post.category)) {
+      const label = post.category
+        .split('-')
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ')
+      map.set(post.category, label)
+    }
+  })
+
+  return [...map.entries()].map(([slug, label]) => ({ slug, label }))
+})
+
+const videos = computed(() => allVideos.value)
 </script>
 
 <style scoped>
@@ -131,5 +182,9 @@ const posts = computed(() => [
 .read-more {
   color: var(--tyrian-purple);
   font-weight: 600;
+}
+
+.videos-section {
+  margin-top: 60px;
 }
 </style>

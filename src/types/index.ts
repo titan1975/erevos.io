@@ -64,3 +64,22 @@ export interface Service {
   description: string
   features?: string[]
 }
+
+// ---- Content Studio Types ----
+export interface Article {
+  id: string
+  slug: string
+  title: string
+  excerpt: string
+  content: string
+  category: string
+  createdAt: string
+}
+
+export interface VideoLink {
+  id: string
+  title: string
+  youtubeUrl: string
+  youtubeId: string
+  createdAt: string
+}

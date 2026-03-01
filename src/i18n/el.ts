@@ -5,6 +5,7 @@ const el: Record<string, string> = {
   'nav.about': 'Σχετικά',
   'nav.projects': 'Έργα',
   'nav.contact': 'Επικοινωνία',
+  'nav.studio': 'Studio',
 
   // ── Hero ──
   'hero.badge': 'Χωρίς φούμαρα. Χωρίς δράματα. Απλά λύσεις που δουλεύουν.',

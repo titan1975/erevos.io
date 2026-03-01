@@ -12,7 +12,11 @@
     <section class="post-section">
       <div class="container">
         <article class="card post-content">
-          <p>{{ t('blogPost.comingSoon') }} {{ postTitle }}.</p>
+          <template v-if="article">
+            <p class="post-excerpt">{{ article.excerpt }}</p>
+            <p class="post-body">{{ article.content }}</p>
+          </template>
+          <p v-else>{{ t('blogPost.comingSoon') }} {{ postTitle }}.</p>
         </article>
       </div>
     </section>
@@ -23,11 +27,19 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
+import { useContentStudio } from '../composables/useContentStudio'
 
 const route = useRoute()
 const { t } = useI18n()
+const { getArticleBySlug } = useContentStudio()
+
+const article = computed(() => getArticleBySlug(route.params.slug as string))
 
 const postTitle = computed(() => {
+  if (article.value) {
+    return article.value.title
+  }
+
   const slug = route.params.slug as string
   return slug
     .split('-')
@@ -63,5 +75,15 @@ const postTitle = computed(() => {
   font-size: 18px;
   line-height: 1.8;
   color: var(--text-gray);
+}
+
+.post-excerpt {
+  font-size: 20px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.post-body {
+  white-space: pre-line;
 }
 </style>
