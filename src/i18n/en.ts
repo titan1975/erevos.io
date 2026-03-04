@@ -8,83 +8,87 @@ const en: Record<string, string> = {
   'nav.studio': 'Studio',
 
   // ── Hero ──
-  'hero.badge': 'No fluff. No drama. Just solutions that work.',
-  'hero.title1': "We Don't Just Write",
-  'hero.titleHighlight1': 'Code',
-  'hero.title2': 'We Solve',
-  'hero.titleHighlight2': 'Problems',
+  'hero.badge': 'Remove friction. Accelerate execution.',
+  'hero.title1': 'We Remove',
+  'hero.titleHighlight1': 'Bottlenecks',
+  'hero.title2': 'And Build',
+  'hero.titleHighlight2': 'Scalable Operations',
   'hero.subtitle':
-    'Our philosophy is simple: solve the real problem, not just the symptom. We dig into what’s actually blocking your team, fix it properly, and leave you with systems that stay reliable under pressure.',
+    'We eliminate system inefficiencies, replace manual workflows, and design operations that scale with your business. Erevos.io works as your long-term technical partner to keep execution fast and reliable.',
   'hero.btnTalk': "Let's Talk",
   'hero.btnServices': 'What We Do',
-  'hero.trust': 'Real devs & startups trust us with their code',
-  'hero.codeTitle': 'fix_legacy.py',
+  'hero.trust': 'Growing teams trust us to remove operational friction',
+  'hero.codeTitle': 'operations_plan.md',
   'hero.codeBefore': '# Before Erevos.io',
-  'hero.codeAfter': '# After Erevos.io ✨',
+  'hero.codeAfter': '# After Erevos.io',
 
   // ── Stats ──
-  'stats.projects': 'Projects Done',
-  'stats.uptime': 'Uptime. For Real.',
-  'stats.available': "We're Around",
-  'stats.partners': 'Happy Partners',
+  'stats.projects': 'Systems Optimized',
+  'stats.uptime': 'Operational Reliability',
+  'stats.available': 'Support Coverage',
+  'stats.partners': 'Long-Term Partners',
 
   // ── What We Do ──
-  'whatwedo.tag': 'THE REAL DEAL',
-  'whatwedo.title': 'Three Problems.',
-  'whatwedo.titleHighlight': 'One Team.',
-  'whatwedo.subtitle': "We don't do everything — we do these three things really damn well",
+  'whatwedo.tag': 'BUSINESS OUTCOMES',
+  'whatwedo.title': 'Less Friction.',
+  'whatwedo.titleHighlight': 'More Throughput.',
+  'whatwedo.subtitle':
+    'We focus on the core levers that reduce waste, improve execution speed, and support sustainable growth.',
 
   // ── Pillars ──
-  'pillar1.title': 'Fix Broken Code',
+  'pillar1.title': 'Eliminate System Inefficiencies',
   'pillar1.desc':
-    'We rescue legacy systems, squash bugs, and refactor messy codebases into clean, maintainable software.',
-  'pillar1.feat1': 'Legacy rescue',
-  'pillar1.feat2': 'Bug extermination',
-  'pillar1.feat3': 'Performance tuning',
-  'pillar1.feat4': 'Code modernization',
+    'We identify the root causes of delays and rework, then streamline your systems to improve speed, reliability, and cost efficiency.',
+  'pillar1.feat1': 'Process bottleneck analysis',
+  'pillar1.feat2': 'System performance optimization',
+  'pillar1.feat3': 'Reliability and uptime improvements',
+  'pillar1.feat4': 'Operational cost reduction',
 
-  'pillar2.title': 'Automate Everything',
+  'pillar2.title': 'Replace Manual Workflows',
   'pillar2.desc':
-    'From CI/CD pipelines to business workflows — we eliminate repetitive tasks so your team can focus on what matters.',
-  'pillar2.feat1': 'CI/CD pipelines',
-  'pillar2.feat2': 'Workflow automation',
-  'pillar2.feat3': 'API orchestration',
-  'pillar2.feat4': 'Data pipelines',
+    'We automate repetitive operational work so your team can focus on strategic priorities instead of manual execution.',
+  'pillar2.feat1': 'Workflow automation',
+  'pillar2.feat2': 'Cross-system integration',
+  'pillar2.feat3': 'Approval and handoff automation',
+  'pillar2.feat4': 'Automated reporting and data flows',
 
-  'pillar3.title': 'Solve Hard Problems',
+  'pillar3.title': 'Build for Scalability',
   'pillar3.desc':
-    'Architecture reviews, system design, and custom solutions for the challenges that stump other teams.',
-  'pillar3.feat1': 'System architecture',
-  'pillar3.feat2': 'Technical consulting',
-  'pillar3.feat3': 'Custom solutions',
-  'pillar3.feat4': 'Scalability planning',
+    'We strengthen your operational foundation so growth does not create complexity, slowdowns, or delivery risk.',
+  'pillar3.feat1': 'Scalable system design',
+  'pillar3.feat2': 'Capacity and growth planning',
+  'pillar3.feat3': 'Risk reduction architecture',
+  'pillar3.feat4': 'Long-term roadmap alignment',
 
   // ── Services Preview ──
-  'services.tag': 'HOW WE HELP',
-  'services.title': "Stuff We're",
-  'services.titleHighlight': 'Good At',
-  'services.subtitle': 'No buzzwords, just what we actually deliver',
+  'services.tag': 'DELIVERY FOCUS',
+  'services.title': 'What We',
+  'services.titleHighlight': 'Deliver',
+  'services.subtitle': 'Practical improvements tied to measurable operational outcomes',
   'services.seeAll': 'See Everything We Do',
   'services.learnMore': 'Learn More',
 
   // ── Service Cards ──
-  'service1.title': 'Code Fixing & Cleanup',
-  'service1.desc': "Your code is broken or messy? We'll get in there and make it work properly.",
-  'service1.feat1': 'Legacy code rescue',
-  'service1.feat2': 'Bug fixing',
-  'service1.feat3': 'Performance boost',
+  'service1.title': 'System Efficiency Optimization',
+  'service1.desc':
+    'We remove structural inefficiencies that slow execution and increase operational costs.',
+  'service1.feat1': 'Operational bottleneck removal',
+  'service1.feat2': 'Reliability improvements',
+  'service1.feat3': 'Performance and cost gains',
 
-  'service2.title': 'Automation',
-  'service2.desc': "Stop doing things manually. We'll set up the pipelines and workflows for you.",
+  'service2.title': 'Workflow Automation',
+  'service2.desc':
+    'We replace repetitive manual work with automated workflows that improve consistency and speed.',
   'service2.feat1': 'Workflow automation',
-  'service2.feat2': 'API integrations',
-  'service2.feat3': 'Data pipeline setup',
+  'service2.feat2': 'System integrations',
+  'service2.feat3': 'Automated data and reporting flows',
 
-  'service3.title': 'Technical Consulting',
-  'service3.desc': "Need a straight answer about your tech stack? We'll give you one.",
-  'service3.feat1': 'Honest tech advice',
-  'service3.feat2': 'Custom builds',
-  'service3.feat3': 'Architecture planning',
+  'service3.title': 'Long-Term Technical Partnership',
+  'service3.desc':
+    'We work alongside your leadership team to improve execution today and maintain scalable growth over time.',
+  'service3.feat1': 'Strategic technical guidance',
+  'service3.feat2': 'Scalability roadmap planning',
+  'service3.feat3': 'Ongoing operational support',
 
   'service4.title': 'Legacy Rescue',
   'service4.desc': "Old system nobody wants to touch? We'll modernize it without burning it down.",
@@ -105,25 +109,29 @@ const en: Record<string, string> = {
   'service6.feat3': 'Best practices',
 
   // ── Process ──
-  'process.tag': 'NO MYSTERY',
-  'process.title': 'How It',
-  'process.titleHighlight': 'Works',
-  'process.subtitle': 'Four steps. No surprises. No hidden fees.',
-  'process1.title': 'We Talk',
-  'process1.desc': "You tell us what's broken. We listen — no sales pitch.",
-  'process2.title': 'We Dig In',
-  'process2.desc': 'We look at your code, find the real problems, and tell you straight.',
-  'process3.title': 'We Build & Fix',
-  'process3.desc': 'Clean code, tested, production-ready. No shortcuts.',
-  'process4.title': 'We Ship & Support',
-  'process4.desc': 'It goes live, it works, and we stick around if you need us.',
+  'process.tag': 'CLEAR EXECUTION',
+  'process.title': 'How We',
+  'process.titleHighlight': 'Work',
+  'process.subtitle': 'A direct process focused on fast decisions and measurable outcomes.',
+  'process1.title': 'Assess',
+  'process1.desc':
+    'We map your current operations, identify bottlenecks, and prioritize high-impact opportunities.',
+  'process2.title': 'Design',
+  'process2.desc':
+    'We define the workflow, systems, and sequencing required to remove friction at the root.',
+  'process3.title': 'Implement',
+  'process3.desc':
+    'We execute the changes, automate manual steps, and validate performance improvements.',
+  'process4.title': 'Partner',
+  'process4.desc':
+    'We stay engaged to support scale, manage risk, and keep your operations moving forward.',
 
   // ── CTA ──
-  'cta.title': 'Got a',
-  'cta.titleHighlight': 'Problem?',
-  'cta.titleEnd': "Let's Fix It.",
+  'cta.title': 'Ready to',
+  'cta.titleHighlight': 'Remove Friction',
+  'cta.titleEnd': 'and Scale Confidently?',
   'cta.subtitle':
-    "Drop us a line. We'll look at your project, give you honest feedback, and go from there. No pressure.",
+    'Let’s review your operations, identify the highest-impact improvements, and build a practical execution plan together.',
   'cta.btnChat': "Let's Chat",
   'cta.btnPricing': 'See What It Costs',
 

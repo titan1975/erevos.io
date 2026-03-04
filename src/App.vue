@@ -3,14 +3,14 @@
     <Navbar />
     <router-view />
     <Footer />
-    <AthenaBot />
+    <!-- <AthenaBot /> -->
   </div>
 </template>
 
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
-import AthenaBot from './components/AthenaBot.vue'
+// import AthenaBot from './components/AthenaBot.vue'  // Hidden for now
 </script>
 
 <style>

@@ -30,8 +30,8 @@ const BlogPostView = () => import('../views/BlogPostView.vue')
 const BlogCategoryView = () => import('../views/BlogCategoryView.vue')
 const ContentStudioView = () => import('../views/ContentStudioView.vue')
 
-// Athena Chat
-const AthenaChatView = () => import('../views/AthenaChatView.vue')
+// Athena Chat (hidden for now)
+// const AthenaChatView = () => import('../views/AthenaChatView.vue')
 
 // Legal
 const PrivacyView = () => import('../views/PrivacyView.vue')
@@ -193,19 +193,19 @@ const routes: RouteRecordRaw[] = [
     },
   },
 
-  // === ATHENA AI CHAT ===
-  {
-    path: '/athena',
-    name: 'athena',
-    component: AthenaChatView,
-    meta: {
-      title: 'Chat with Athena - AI Assistant',
-      description:
-        'Ask Athena, our AI assistant, about code, automation, or any technical questions.',
-      requiresAuth: false,
-      layout: 'default',
-    },
-  },
+  // === ATHENA AI CHAT (hidden for now) ===
+  // {
+  //   path: '/athena',
+  //   name: 'athena',
+  //   component: AthenaChatView,
+  //   meta: {
+  //     title: 'Chat with Athena - AI Assistant',
+  //     description:
+  //       'Ask Athena, our AI assistant, about code, automation, or any technical questions.',
+  //     requiresAuth: false,
+  //     layout: 'default',
+  //   },
+  // },
 
   // === BLOG SECTION ===
   {
